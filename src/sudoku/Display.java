@@ -12,7 +12,7 @@ final class Display{
         createFrame(startFrame);
     }
 
-    private void createFrame(FrameBase frame){
+    private void createFrame(JFrame frame){
         this.frame = frame;
         frame.addWindowListener(new WindowAdapter()
         {
@@ -20,12 +20,12 @@ final class Display{
                 System.exit(0);
             }
         });
-        frame.setSize(frame.getWindowWidth(),frame.getWindowHeight());
+        frame.setSize(frame.getWidth(),frame.getHeight());
         frame.setVisible(true);
 
     }
 
-    static void paint(){
+    public static void paint(){
         frame.paint(frame.getGraphics());
 
     }

@@ -3,13 +3,19 @@ package sudoku;
 import javax.swing.*;
 import java.awt.*;
 
-public class GameFrame extends FrameBase {
+public class StartFrame extends  FrameBase{
+    /**
+     * creates start screen ie new game window
+     * drop down to select difficulty and button for new game
+     */
     private final int WINDOW_WIDTH = 200;
     private final int WINDOW_HEIGHT = 200;
 
 
-    @Override
-    public void paint(Graphics g) {
+
+
+
+    public void paint(Graphics g){
 
     }
 
@@ -22,5 +28,4 @@ public class GameFrame extends FrameBase {
     public int getWindowWidth() {
         return WINDOW_WIDTH;
     }
-
 }

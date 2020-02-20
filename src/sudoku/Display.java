@@ -8,18 +8,19 @@ final class Display{
     private static JFrame frame;
 
     Display(){
-        createFrame();
+        StartFrame startFrame = new StartFrame();
+        createFrame(startFrame);
     }
 
-    private void createFrame(){
-        this.frame = new GameFrame();
+    private void createFrame(FrameBase frame){
+        this.frame = frame;
         frame.addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent we){
                 System.exit(0);
             }
         });
-        //frame.setSize();
+        frame.setSize(frame.getWindowWidth(),frame.getWindowHeight());
         frame.setVisible(true);
 
     }

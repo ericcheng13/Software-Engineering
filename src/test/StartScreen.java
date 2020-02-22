@@ -1,12 +1,11 @@
 package test;
-// Java Program to create a simple JComboBox
-// and add elements to it
+// cant actually use
 import sudoku.Difficulty;
 
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-class Start extends JFrame implements ItemListener {
+class StartScreen extends JFrame implements ItemListener {
 
     // frame
     static JFrame f;
@@ -32,7 +31,7 @@ class Start extends JFrame implements ItemListener {
             }
         });
         // create a object
-        Start s = new Start();
+        StartScreen s = new StartScreen();
 
         // set layout of frame
         f.setLayout(new FlowLayout());
@@ -73,7 +72,7 @@ class Start extends JFrame implements ItemListener {
         layout.setVgap(5);
         f.add(p);
         f.setSize(200,200);
-        f.pack();
+        //f.pack();
         f.setVisible(true);
     }
     public void itemStateChanged(ItemEvent e)

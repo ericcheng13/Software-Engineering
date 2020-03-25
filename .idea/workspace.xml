@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="" />
+    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="unknown xml changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/CreateGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/CreateGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GameScreen.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +62,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayableGridCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreator" />
+      <module name="Sudoku" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.Runner" />
       <module name="Sudoku" />
@@ -87,6 +105,7 @@
       <list>
         <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.StartScreen" />
+        <item itemvalue="Application.PlayableGridCreator" />
         <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
@@ -123,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582335884436</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="unknown xml changes">
+      <created>1582582830778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582582830778</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +157,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -142,6 +170,7 @@
     <MESSAGE value="too complex, going to prototype differently" />
     <MESSAGE value="start menu visuals" />
     <MESSAGE value="game screen visuals" />
-    <option name="LAST_COMMIT_MESSAGE" value="game screen visuals" />
+    <MESSAGE value="unknown xml changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="unknown xml changes" />
   </component>
 </project>

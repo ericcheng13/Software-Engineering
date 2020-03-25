@@ -1,3 +1,5 @@
+package sudoku;
+
 public class CreateGrid {
 
   private int[][] mat = new int[9][9];

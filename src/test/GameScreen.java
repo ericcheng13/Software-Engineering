@@ -1,5 +1,7 @@
 package test;
 
+import sudoku.PlayableGridCreator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -34,11 +36,14 @@ class GameScreen extends JFrame {
 
         //create table
         String[] colNames = {"1","2","3","4","5","6","7","8","9"};
-        Object[][] sudoGrid = {{1,2,3,4,5,6,7,8,9},{2,3,4,5,6,7,8,9,1},{3,4,5,6,7,8,9,1,2},
+        PlayableGridCreator pgc = new PlayableGridCreator();
+        Object[][] grid = pgc.easy();
+        Object[][] sudoGrid = grid;
+                /*{{1,2,null,4,5,6,7,8,9},{2,3,4,5,6,7,8,9,1},{3,4,5,6,7,8,9,1,2},
                 {4,5,6,7,8,9,1,2,3},{5,6,7,8,9,1,2,3,4},{6,7,8,9,1,2,3,4,5},
-                {7,8,9,1,2,3,4,5,6},{8,9,1,2,3,4,5,6,7},{9,1,2,3,4,5,6,7,8}};
+                {7,8,9,1,2,3,4,5,6},{8,9,1,2,3,4,5,6,7},{9,1,2,3,4,5,6,7,8}};*/
 
-        JTable table = new JTable(sudoGrid, colNames);
+        JTable table = new JTable(grid, colNames);
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -76,6 +81,10 @@ class GameScreen extends JFrame {
         f.pack();
         f.setVisible(true);
 
+    }
+
+    Integer[][] makeGrid(int[][] input){
+        for()
     }
 
 }

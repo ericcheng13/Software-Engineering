@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="unknown xml changes">
+      <change afterPath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/CreateGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/CreateGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/GameScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/StartScreen.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameScreen">
+  <component name="RunManager" selected="Application.StartScreen">
     <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.GameScreen" />
       <module name="Sudoku" />
@@ -103,8 +107,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.StartScreen" />
+        <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.PlayableGridCreator" />
         <item itemvalue="Application.Runner" />
       </list>

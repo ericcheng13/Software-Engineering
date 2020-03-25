@@ -1,60 +1,71 @@
 package sudoku;
-
-import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+class StartFrame {
 
-public class StartFrame extends JFrame implements ActionListener {
-    /**
-     * creates start screen ie new game window
-     * drop down to select difficulty and button for new game
-     */
-    private final int WINDOW_WIDTH = 200;
-    private final int WINDOW_HEIGHT = 200;
-    JLabel diffLabel;
+    static JFrame f;
+    static JLabel l, l1;
+    static JComboBox c1;
+    static JButton b;
+    static ActionListener al;
+    static ItemListener il;
 
-    public StartFrame(){
-        this.setLayout(new FlowLayout());
-        diffLabel = new JLabel("Select difficulty: ");
-        this.add(diffLabel);
-        JComponent dropdown = new DiffDropDown(this);
-        dropdown.setOpaque(true);
-        this.add(dropdown);
+    StartFrame(ActionListener startGameListener, ItemListener comboBoxListener){
+        this.al = startGameListener;
+        this.il = comboBoxListener;
+        createFrame();
+    }
+    private static void createFrame()
+    {
+        // create a new frame
+        f = new JFrame("Sudoku Unlimited");
+        f.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent we){
+                System.exit(0);
+            }
+        });
 
+        // set layout of frame
+        f.setLayout(new FlowLayout());
+
+        // create checkbox
+        c1 = new JComboBox(Difficulty.values());
+
+        // add ItemListener
+        c1.addItemListener(il);
+
+        // create labels
+        l = new JLabel("Select difficulty: ");
+        l1 = new JLabel("");
+
+        b = new JButton("Start Game!");
+        b.addActionListener(al);
+
+        // create a new panel
+        JPanel p = new JPanel();
+        GridLayout layout = new GridLayout(4,0);
+        p.setLayout(layout);
+
+        p.add(l);
+
+        // add combobox to panel
+        p.add(c1);
+        p.add(l1);
+
+
+        p.add(b);
+        // add panel to frame
+
+        layout.setVgap(5);
+        f.add(p);
+        f.setSize(200,200);
+        f.setVisible(true);
     }
 
-
-
-    public void paint(Graphics g){
-
-
+    void setVisible(boolean visible){
+        f.setVisible(visible);
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String action = e.getActionCommand();
-        System.out.println(action);
-
-    }
-
-    @Override
-    public int getHeight() {
-        return WINDOW_HEIGHT;
-    }
-
-    @Override
-    public int getWidth() {
-        return WINDOW_WIDTH;
-    }
-
-    class DiffDropDown extends JComponent{
-        DiffDropDown(ActionListener al){
-            String[] dif = {"1","2","3"};
-            JComboBox diffList = new JComboBox(dif);
-            diffList.addActionListener(al);
-        }
-    }
-
 
 }

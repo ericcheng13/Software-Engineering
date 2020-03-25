@@ -1,35 +1,37 @@
 package sudoku;
 
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 final class Display{
-
-    private static JFrame frame;
-
+    GameFrame gameFrame;
+    StartFrame startFrame;
     Display(){
-        StartFrame startFrame = new StartFrame();
-        createFrame(startFrame);
+        startFrame = new StartFrame(startGameListener(),comboBoxListener());
     }
 
-    private void createFrame(JFrame frame){
-        this.frame = frame;
-        frame.addWindowListener(new WindowAdapter()
-        {
-            public void windowClosing(WindowEvent we){
-                System.exit(0);
+    ActionListener startGameListener(){
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
-        });
-        frame.setSize(frame.getWidth(),frame.getHeight());
-        frame.setVisible(true);
+        };
 
+        return al;
     }
 
-    public static void paint(){
-        frame.paint(frame.getGraphics());
+    ItemListener comboBoxListener(){
+        ItemListener il = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
 
+            }
+        };
+
+        return  il;
     }
-
-
 
 }

@@ -89,7 +89,7 @@ class GameFrame {
         //create window
         f.add(listPanel);
         f.setSize(275,325);
-        f.setVisible(true);
+        f.setVisible(false);
 
     }
 
@@ -110,4 +110,7 @@ class GameFrame {
         return WINDOW_WIDTH;
     }
 
+    public void setVisible(boolean visible){
+        f.setVisible(visible);
+    }
 }

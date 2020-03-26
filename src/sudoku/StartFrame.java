@@ -9,11 +9,19 @@ class StartFrame {
     static JComboBox c1;
     static JButton b;
     static ActionListener al;
-    static ItemListener il;
+    private static Difficulty diff;
 
-    StartFrame(ActionListener startGameListener, ItemListener comboBoxListener){
+    static ItemListener il = new ItemListener() {
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            JComboBox cb = (JComboBox)e.getSource();
+            diff = (Difficulty) cb.getSelectedItem();
+        }
+    };
+
+    StartFrame(ActionListener startGameListener){
         this.al = startGameListener;
-        this.il = comboBoxListener;
+        diff = Difficulty.EASY;
         createFrame();
     }
     private static void createFrame()
@@ -30,7 +38,7 @@ class StartFrame {
         // set layout of frame
         f.setLayout(new FlowLayout());
 
-        // create checkbox
+        // create combobox
         c1 = new JComboBox(Difficulty.values());
 
         // add ItemListener
@@ -62,6 +70,10 @@ class StartFrame {
         f.add(p);
         f.setSize(200,200);
         f.setVisible(true);
+    }
+
+    Difficulty getDifficulty(){
+        return diff;
     }
 
     void setVisible(boolean visible){

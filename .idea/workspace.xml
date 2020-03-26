@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="unknown xml changes">
-      <change afterPath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" afterDir="false" />
+    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="start frame done, button &amp; combobox">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/StartScreen.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartScreen">
+  <component name="RunManager" selected="Application.Runner">
     <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.GameScreen" />
       <module name="Sudoku" />
@@ -107,10 +103,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Runner" />
         <item itemvalue="Application.StartScreen" />
         <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.PlayableGridCreator" />
-        <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582582830778</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="frames work, need to work on changing between them">
+      <created>1585162794410</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585162794410</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +178,7 @@
     <MESSAGE value="start menu visuals" />
     <MESSAGE value="game screen visuals" />
     <MESSAGE value="unknown xml changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="unknown xml changes" />
+    <MESSAGE value="frames work, need to work on changing between them" />
+    <option name="LAST_COMMIT_MESSAGE" value="frames work, need to work on changing between them" />
   </component>
 </project>

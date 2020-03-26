@@ -9,29 +9,20 @@ final class Display{
     GameFrame gameFrame;
     StartFrame startFrame;
     Display(){
-        startFrame = new StartFrame(startGameListener(),comboBoxListener());
+        startFrame = new StartFrame(startGameListener());
     }
 
     ActionListener startGameListener(){
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                startFrame.setVisible(false);
+                gameFrame = new GameFrame(startFrame.getDifficulty());
+                gameFrame.setVisible(true);
             }
         };
 
         return al;
-    }
-
-    ItemListener comboBoxListener(){
-        ItemListener il = new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-
-            }
-        };
-
-        return  il;
     }
 
 }

@@ -1,3 +1,8 @@
+package sudoku;
+
+import sudoku.CreateGrid;
+import sudoku.PlayableGridCreator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;

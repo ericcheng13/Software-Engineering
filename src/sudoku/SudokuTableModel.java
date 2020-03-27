@@ -3,11 +3,11 @@ package sudoku;
 import javax.swing.table.DefaultTableModel;
 import java.util.Vector;
 
-class SudokuTableModel extends DefaultTableModel {
+public class SudokuTableModel extends DefaultTableModel {
     Integer[][] originalTable;
     Integer[][] answerTable;
 
-    SudokuTableModel(Integer[][] playGrid, Integer[][] answerTable ){
+    public SudokuTableModel(Integer[][] playGrid, Integer[][] answerTable){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
         this.answerTable = answerTable;

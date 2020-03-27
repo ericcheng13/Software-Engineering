@@ -104,7 +104,7 @@ public class PlayableGridCreator {
   }
 
   //Creates a int[80] that contains randomly sorted integers from 0-80.
-  int[] generateOrder(){
+  public int[] generateOrder(){
     Integer[] order = new Integer[80];
     for(int i = 0; i < 80; i++){
       order[i] = i;

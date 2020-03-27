@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/DisplayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/GameFrameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/RunnerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/StartFrameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sudoku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sudoku.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateGrid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/test/RunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/RunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/test/SudokuTableModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableModelTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +22,7 @@
   <component name="CoverageViewManager">
     <option name="myFlattenPackages" value="true" />
     <option name="myAutoScrollToSource" value="true" />
-    <option name="myElementSize" value="15" />
+    <option name="myElementSize" value="17" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -81,33 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DisplayTest">
-    <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.GameScreen" />
-      <module name="Sudoku" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayableGridCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreator" />
-      <module name="Sudoku" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SudokuTableModelTest">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.Runner" />
       <module name="Sudoku" />
@@ -121,25 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StartScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.StartScreen" />
+    <configuration name="DisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku" />
-      <extension name="coverage" runner="jacoco">
-        <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
+          <option name="ENABLED" value="false" />
         </pattern>
         <pattern>
           <option name="PATTERN" value="sudoku.*" />
@@ -155,20 +111,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayableGridCreatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sudoku" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.RunnerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTableModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.SudokuTableModelTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.GameScreen" />
-      <item itemvalue="Application.PlayableGridCreator" />
       <item itemvalue="Application.Runner" />
-      <item itemvalue="Application.StartScreen" />
       <item itemvalue="JUnit.DisplayTest" />
+      <item itemvalue="JUnit.PlayableGridCreatorTest" />
+      <item itemvalue="JUnit.RunnerTest" />
+      <item itemvalue="JUnit.SudokuTableModelTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SudokuTableModelTest" />
+        <item itemvalue="JUnit.RunnerTest" />
+        <item itemvalue="JUnit.PlayableGridCreatorTest" />
         <item itemvalue="JUnit.DisplayTest" />
         <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.StartScreen" />
-        <item itemvalue="Application.GameScreen" />
-        <item itemvalue="Application.PlayableGridCreator" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585274410167</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test classes created, DisplayTest done">
+      <created>1585277465020</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585277465020</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,15 +301,25 @@
     <MESSAGE value="sudoku grid 3x3 lines" />
     <MESSAGE value="cells wont change if out of bound; fixed reused grid error" />
     <MESSAGE value="cells only edit if within range" />
-    <option name="LAST_COMMIT_MESSAGE" value="cells only edit if within range" />
+    <MESSAGE value="test classes created, DisplayTest done" />
+    <option name="LAST_COMMIT_MESSAGE" value="test classes created, DisplayTest done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.ic" NAME="DisplayTest Coverage Results" MODIFIED="1585277282211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
       <FILTER>sudoku.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$RunnerTest.ic" NAME="RunnerTest Coverage Results" MODIFIED="1585278884920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.exec" NAME="DisplayTest Coverage Results" MODIFIED="1585277426557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
+      <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$PlayableGridCreatorTest.ic" NAME="PlayableGridCreatorTest Coverage Results" MODIFIED="1585278844072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableModelTest.ic" NAME="SudokuTableModelTest Coverage Results" MODIFIED="1585280153711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.*</FILTER>
     </SUITE>
   </component>

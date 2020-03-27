@@ -36,7 +36,8 @@ public final class GameFrame {
                 playGrid = makeIntegerGrid(pgc.hard());
                 break;
         }
-        answerGrid = makeIntegerGrid(pgc.getMat());
+        answerGrid = makeIntegerGrid(pgc.mat);
+        pgc.printMat(pgc.mat);
         this.newGameAL = newGameAL;
         createFrame();
     }
@@ -90,9 +91,8 @@ public final class GameFrame {
         newGame = new JButton("New Game");
         newGame.addActionListener(newGameAL);
         //create table
-
         table = new JTable();
-        table.setModel(new SudokuTableModel(playGrid,answerGrid));
+        table.setModel(new SudokuTableModel(playGrid,pgc));
         table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -100,6 +100,8 @@ public final class GameFrame {
         table.setRowHeight(20);
         table.doLayout();
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 20));
+
+
 
         //title label
         l = new JLabel("Sudoku Unlimited");
@@ -134,7 +136,7 @@ public final class GameFrame {
 
     }
 
-    private static Integer[][] makeIntegerGrid(int[][] input){
+    public static Integer[][] makeIntegerGrid(int[][] input){
         Integer[][] returnGrid = new Integer[9][9];
         for(int i = 0; i<9;i++){
             for(int j = 0; j<9;j++){

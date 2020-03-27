@@ -6,11 +6,13 @@ import java.util.Vector;
 public class SudokuTableModel extends DefaultTableModel {
     Integer[][] originalTable;
     Integer[][] answerTable;
+    PlayableGridCreator pgc;
 
-    public SudokuTableModel(Integer[][] playGrid, Integer[][] answerTable){
+    public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
-        this.answerTable = answerTable;
+        this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
+        this.pgc = pgc;
     }
 
     @Override
@@ -36,7 +38,7 @@ public class SudokuTableModel extends DefaultTableModel {
     public void clearTable() {
             for (int i = 0; i < this.originalTable.length; i++) {
                 for (int j = 0; j < this.originalTable[0].length; j++){
-                    if (this.getValueAt(i,j) != this.answerTable[i][j]){
+                    if (this.getValueAt(i,j) != this.originalTable[i][j]){
                         this.setValueAt(null, i, j);
                     }
                 }
@@ -45,13 +47,14 @@ public class SudokuTableModel extends DefaultTableModel {
 
     public void fillValue() {
         FORLOOPS:
-        for (int i = 0; i < this.getColumnCount(); i++) {
-            for (int j = 0; j < this.getRowCount(); j++){
-                if (this.getValueAt(i,j) != null && this.getValueAt(i,j) != answerTable[i][j] && originalTable[i][j] == null){
-                    this.setValueAt(answerTable[i][j], i, j);
+        for (int i = 0; i < this.originalTable.length; i++) {
+            for (int j = 0; j < this.originalTable[0].length; j++){
+                Integer val = (Integer)this.getValueAt(i,j);
+                if (val != null && val != answerTable[i][j] && originalTable[i][j] == null){
+                    this.setValueAt(pgc.getMatValueAt(i,j), i, j);
                     break FORLOOPS;
                 }
-                else if (this.getValueAt(i,j) == null) {
+                else if (val == null) {
                     this.setValueAt(answerTable[i][j], i, j);
                     break FORLOOPS;
                 }

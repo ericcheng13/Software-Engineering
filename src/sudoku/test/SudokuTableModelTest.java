@@ -28,7 +28,7 @@ class SudokuTableModelTest {
         PlayableGridCreator pgc = new PlayableGridCreator();
         originalGrid = pgc.hard();
         answerGrid = pgc.getMat();
-        stm = new SudokuTableModel(makeIntegerGrid(originalGrid), makeIntegerGrid(answerGrid));
+        stm = new SudokuTableModel(makeIntegerGrid(originalGrid),pgc);
     }
 
     @Test

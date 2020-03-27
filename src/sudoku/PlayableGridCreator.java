@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PlayableGridCreator {
   private int[][] playable;
-  private int[][] mat;
+  public int[][] mat;
   private int[] order;
 
   public PlayableGridCreator(){
@@ -179,6 +179,10 @@ public class PlayableGridCreator {
       sb.append(" \n");
     }
     return sb.toString();
+  }
+
+  public Integer getMatValueAt(int row, int col){
+    return new Integer(mat[row][col]);
   }
 
   public static void main(String[] args){

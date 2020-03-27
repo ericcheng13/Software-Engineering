@@ -30,20 +30,14 @@ class SudokuTableModelTest {
         answerGrid = pgc.getMat();
         stm = new SudokuTableModel(makeIntegerGrid(originalGrid), makeIntegerGrid(answerGrid));
     }
-    private int[] findEditableCell(){
-        for(int i = 0; i <0; i++){
-            for(int j = 0; j<9;j++)
-                if(originalGrid[i][j]==0)
-                    return new int[] {i,j};
-        }
-        return null;
-    }
+
     @Test
     void isCellEditable() {
-        if(stm.getValueAt(0,0)==null){
-            assertTrue(stm.isCellEditable(0,0));
+        for(int i =0; i<9;i++) {
+            if (stm.getValueAt(i, 0) == null) {
+                assertTrue(stm.isCellEditable(i, 0));
+            } else assertFalse(stm.isCellEditable(i, 0));
         }
-        else assertFalse(stm.isCellEditable(0,0));
     }
 
     @Test

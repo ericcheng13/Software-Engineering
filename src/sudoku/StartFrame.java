@@ -20,7 +20,7 @@ public final class StartFrame {
         }
     };
 
-    StartFrame(ActionListener startGameListener){
+    public StartFrame(ActionListener startGameListener){
         this.al = startGameListener;
         createFrame();
     }
@@ -72,11 +72,11 @@ public final class StartFrame {
         f.setVisible(true);
     }
 
-    Difficulty getDifficulty(){
+    public Difficulty getDifficulty(){
         return diff;
     }
 
-    void setVisible(boolean visible){
+    public void setVisible(boolean visible){
         f.setVisible(visible);
     }
 

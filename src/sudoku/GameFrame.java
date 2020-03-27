@@ -22,7 +22,7 @@ public final class GameFrame {
     private static ActionListener newGameAL;
 
 
-    GameFrame(Difficulty diff, ActionListener newGameAL){
+    public GameFrame(Difficulty diff, ActionListener newGameAL){
         pgc = new PlayableGridCreator();
         switch(diff){
             case EASY:
@@ -114,5 +114,9 @@ public final class GameFrame {
 
     public void setVisible(boolean visible){
         f.setVisible(visible);
+    }
+
+    public Integer[][] TESTMakeIntegerGrid(int[][] input){
+        return makeIntegerGrid(input);
     }
 }

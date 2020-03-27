@@ -4,10 +4,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 
-class SudokuTableCellRenderer extends DefaultTableCellRenderer {
+public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
     private final int THICK = 1;
     private final int THIN = 0;
-    SudokuTableCellRenderer(){
+    public SudokuTableCellRenderer(){
         super.setOpaque(true);
     }
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {

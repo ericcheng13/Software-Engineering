@@ -7,6 +7,6 @@ class RunnerTest {
     @Test
     void main() {
         Runner run = new Runner();
-        Runner.main(new String[]{});
+        run.main(new String[]{});
     }
 }

@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585268148161</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sudoku grid 3x3 lines">
+      <created>1585271215382</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585271215382</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +204,7 @@
     <MESSAGE value="frames work, need to work on changing between them" />
     <MESSAGE value="start frame done, button &amp; combobox" />
     <MESSAGE value="game frame changes, permanent cell have different color" />
-    <option name="LAST_COMMIT_MESSAGE" value="game frame changes, permanent cell have different color" />
+    <MESSAGE value="sudoku grid 3x3 lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="sudoku grid 3x3 lines" />
   </component>
 </project>

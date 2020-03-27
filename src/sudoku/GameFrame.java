@@ -17,13 +17,14 @@ class GameFrame {
     private static JFrame f;
     private static JLabel l,lb,br;
     private static JButton hint, undo, clear, newGame;
-    private static PlayableGridCreator pgc = new PlayableGridCreator();
+    private static PlayableGridCreator pgc;
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
 
 
     GameFrame(Difficulty diff, ActionListener newGameAL){
+        pgc = new PlayableGridCreator();
         switch(diff){
             case EASY:
                 playGrid = makeIntegerGrid(pgc.easy());
@@ -60,7 +61,7 @@ class GameFrame {
         //create table
 
         JTable table = new JTable();
-        table.setModel(new SudokuTable(playGrid,answerGrid));
+        table.setModel(new SudokuTableModel(playGrid,answerGrid));
         table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,8 +75,9 @@ class GameFrame {
         l.setAlignmentX(Component.CENTER_ALIGNMENT);
         Font font = new Font(l.getFont().getFontName(), Font.BOLD,20);
         l.setFont(font);
-        lb = new JLabel(" "); //for spacing
-        br = new JLabel(" "); //for spacing
+        //empty labels for spacing
+        lb = new JLabel(" ");
+        br = new JLabel(" ");
 
         //create panels
         JPanel listPanel = new JPanel();

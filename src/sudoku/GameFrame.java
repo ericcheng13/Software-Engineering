@@ -2,12 +2,11 @@ package sudoku;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-class GameFrame {
+public final class GameFrame {
     /**
      * creates frame for game itself
      * includes sudoku grid, buttons for Hint, Verify, Undo, Clear, and New Game

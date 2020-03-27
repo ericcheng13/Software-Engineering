@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
-class StartFrame {
+public final class StartFrame {
 
     private static JFrame f;
     private static JLabel l, l1;

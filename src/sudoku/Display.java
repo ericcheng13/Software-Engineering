@@ -3,14 +3,14 @@ package sudoku;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-final class Display{
+public final class Display{
     GameFrame gameFrame;
     StartFrame startFrame;
-    Display(){
+    public Display(){
         startFrame = new StartFrame(startGameListener());
     }
 
-    ActionListener startGameListener(){
+    public ActionListener startGameListener(){
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -23,7 +23,7 @@ final class Display{
         return al;
     }
 
-    ActionListener newGameActionListener(){
+    public ActionListener newGameActionListener(){
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

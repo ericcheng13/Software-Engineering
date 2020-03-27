@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/DisplayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/GameFrameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/RunnerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/StartFrameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sudoku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sudoku.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/tests" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +21,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myFlattenPackages" value="true" />
+    <option name="myAutoScrollToSource" value="true" />
+    <option name="myElementSize" value="15" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -26,10 +45,25 @@
   <component name="ProjectId" id="1Y3xAYt6LzZHEu91nYkRSKJ7dnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../vennDiagram" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test" />
+      <recent name="sudoku" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku" />
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku\src" />
@@ -47,13 +81,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner">
+  <component name="RunManager" selected="JUnit.DisplayTest">
     <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.GameScreen" />
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -66,7 +100,7 @@
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,7 +113,7 @@
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +126,7 @@
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,8 +134,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sudoku" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.DisplayTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.GameScreen" />
+      <item itemvalue="Application.PlayableGridCreator" />
+      <item itemvalue="Application.Runner" />
+      <item itemvalue="Application.StartScreen" />
+      <item itemvalue="JUnit.DisplayTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DisplayTest" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="Application.StartScreen" />
         <item itemvalue="Application.GameScreen" />
@@ -183,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585273788347</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="cells only edit if within range">
+      <created>1585274410167</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585274410167</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,6 +280,17 @@
     <MESSAGE value="game frame changes, permanent cell have different color" />
     <MESSAGE value="sudoku grid 3x3 lines" />
     <MESSAGE value="cells wont change if out of bound; fixed reused grid error" />
-    <option name="LAST_COMMIT_MESSAGE" value="cells wont change if out of bound; fixed reused grid error" />
+    <MESSAGE value="cells only edit if within range" />
+    <option name="LAST_COMMIT_MESSAGE" value="cells only edit if within range" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.ic" NAME="DisplayTest Coverage Results" MODIFIED="1585277282211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+      <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.exec" NAME="DisplayTest Coverage Results" MODIFIED="1585277426557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+      <FILTER>sudoku.*</FILTER>
+    </SUITE>
   </component>
 </project>

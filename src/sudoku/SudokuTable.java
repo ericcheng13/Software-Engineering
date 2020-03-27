@@ -15,6 +15,9 @@ class SudokuTable extends DefaultTableModel {
     public boolean isCellEditable(int row, int column){
         return originalTable[row][column] == null;
     }
-
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
+        return Integer.class;
+    }
 
 }

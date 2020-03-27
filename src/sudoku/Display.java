@@ -17,8 +17,20 @@ final class Display{
             @Override
             public void actionPerformed(ActionEvent e) {
                 startFrame.setVisible(false);
-                gameFrame = new GameFrame(startFrame.getDifficulty());
+                gameFrame = new GameFrame(startFrame.getDifficulty(), newGameActionListener());
                 gameFrame.setVisible(true);
+            }
+        };
+
+        return al;
+    }
+
+    ActionListener newGameActionListener(){
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameFrame.setVisible(false);
+                startFrame.setVisible(true);
             }
         };
 

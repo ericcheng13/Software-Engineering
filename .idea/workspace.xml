@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="start frame done, button &amp; combobox">
+    <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/StartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/StartFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../vennDiagram" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -156,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585162794410</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="start frame done, button &amp; combobox">
+      <created>1585264941158</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585264941158</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +189,7 @@
     <MESSAGE value="game screen visuals" />
     <MESSAGE value="unknown xml changes" />
     <MESSAGE value="frames work, need to work on changing between them" />
-    <option name="LAST_COMMIT_MESSAGE" value="frames work, need to work on changing between them" />
+    <MESSAGE value="start frame done, button &amp; combobox" />
+    <option name="LAST_COMMIT_MESSAGE" value="start frame done, button &amp; combobox" />
   </component>
 </project>

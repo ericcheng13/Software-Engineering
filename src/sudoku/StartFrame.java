@@ -9,7 +9,7 @@ class StartFrame {
     static JComboBox c1;
     static JButton b;
     static ActionListener al;
-    private static Difficulty diff;
+    private static Difficulty diff = Difficulty.EASY;
 
     static ItemListener il = new ItemListener() {
         @Override
@@ -21,7 +21,6 @@ class StartFrame {
 
     StartFrame(ActionListener startGameListener){
         this.al = startGameListener;
-        diff = Difficulty.EASY;
         createFrame();
     }
     private static void createFrame()

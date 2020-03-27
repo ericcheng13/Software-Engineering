@@ -2,6 +2,8 @@ package sudoku;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -10,16 +12,18 @@ class GameFrame {
      * creates frame for game itself
      * includes sudoku grid, buttons for Hint, Verify, Undo, Clear, and New Game
      */
-    private final int WINDOW_WIDTH = 200;
-    private final int WINDOW_HEIGHT = 200;
+    private final int WINDOW_WIDTH = 300;
+    private final int WINDOW_HEIGHT = 325;
     static JFrame f;
     static JLabel l,lb,br;
     static JButton hint, undo, clear, newGame;
     static PlayableGridCreator pgc = new PlayableGridCreator();
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
+    private static ActionListener newGameAL;
 
-    GameFrame(Difficulty diff){
+
+    GameFrame(Difficulty diff, ActionListener newGameAL){
         switch(diff){
             case EASY:
                 playGrid = makeIntegerGrid(pgc.easy());
@@ -32,6 +36,7 @@ class GameFrame {
                 break;
         }
         answerGrid = makeIntegerGrid(pgc.getMat());
+        this.newGameAL = newGameAL;
         createFrame();
     }
 
@@ -49,12 +54,14 @@ class GameFrame {
         hint = new JButton("Hint");
         undo = new JButton("Undo");
         clear = new JButton("Clear");
-        newGame = new JButton("New Game");
 
+        newGame = new JButton("New Game");
+        newGame.addActionListener(newGameAL);
         //create table
 
         JTable table = new JTable();
         table.setModel(new SudokuTable(playGrid,answerGrid));
+        table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
 
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -62,13 +69,15 @@ class GameFrame {
         table.setRowHeight(20);
         table.doLayout();
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 20));
-        //label
+
+        //title label
         l = new JLabel("Sudoku Unlimited");
         l.setAlignmentX(Component.CENTER_ALIGNMENT);
         Font font = new Font(l.getFont().getFontName(), Font.BOLD,20);
         l.setFont(font);
-        lb = new JLabel(" ");
-        br = new JLabel(" ");
+        lb = new JLabel(" "); //for spacing
+        br = new JLabel(" "); //for spacing
+
         //create panels
         JPanel listPanel = new JPanel();
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.PAGE_AXIS));
@@ -88,7 +97,7 @@ class GameFrame {
         listPanel.add(buttonPanel);
         //create window
         f.add(listPanel);
-        f.setSize(275,325);
+        f.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
         f.setVisible(false);
 
     }
@@ -101,13 +110,6 @@ class GameFrame {
             }
         }
         return returnGrid;
-    }
-    public int getHeight() {
-        return WINDOW_HEIGHT;
-    }
-
-    public int getWidth() {
-        return WINDOW_WIDTH;
     }
 
     public void setVisible(boolean visible){

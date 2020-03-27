@@ -11,7 +11,6 @@ class SudokuTableModel extends DefaultTableModel {
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
         this.answerTable = answerTable;
-        this.setValueAt(null, -1,-1);
     }
 
     @Override
@@ -24,7 +23,7 @@ class SudokuTableModel extends DefaultTableModel {
     }
     @Override
     public void setValueAt(Object value, int row, int col){
-        if(value != null && value.getClass()==Integer.class && ((Integer)value <=9 && (Integer)value >=1 )) {
+        if((value==null)||( value != null && value.getClass()==Integer.class && ((Integer)value <=9 && (Integer)value >=1 ))) { //checks if value is within 1-9 range or empty
             Vector<Object> rowVector = dataVector.elementAt(row);
             rowVector.setElementAt(value, col);
 

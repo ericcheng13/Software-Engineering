@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585271215382</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cells wont change if out of bound; fixed reused grid error">
+      <created>1585273788347</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585273788347</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +209,7 @@
     <MESSAGE value="start frame done, button &amp; combobox" />
     <MESSAGE value="game frame changes, permanent cell have different color" />
     <MESSAGE value="sudoku grid 3x3 lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="sudoku grid 3x3 lines" />
+    <MESSAGE value="cells wont change if out of bound; fixed reused grid error" />
+    <option name="LAST_COMMIT_MESSAGE" value="cells wont change if out of bound; fixed reused grid error" />
   </component>
 </project>

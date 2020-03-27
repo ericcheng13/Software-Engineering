@@ -168,23 +168,6 @@ public class PlayableGridCreator {
     return true;
   }
 
-  public void fillValue(int[][] mat) {
-    int x;
-    int y;
-    for (int i = 0; i < mat.length; i++) {
-      for (int j = 0; j < mat.length; j++){
-        if (mat[i][j] == null) {
-          mat[i][j] = this.getMat()[i][j];
-          break;
-          x = i;
-          y = j;
-        }
-        else ;
-      }
-    }
-    this.setCurrentRow(x);
-    this.setCurrentCol(y);
-}
 
   
   public String printMat(int [][] mat){

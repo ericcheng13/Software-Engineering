@@ -1,11 +1,10 @@
 package sudoku;
 
 import javax.swing.*;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.swing.event.undo.*;
+import java.awt.event.*;
 
 public final class GameFrame {
     /**
@@ -21,6 +20,7 @@ public final class GameFrame {
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
+    private static JTable table;
 
 
     public GameFrame(Difficulty diff, ActionListener newGameAL){
@@ -55,15 +55,14 @@ public final class GameFrame {
 
         ActionListener hintAL = new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                pgc.fillValue(playGrid);
-                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
-                table.setValueAt(playGrid[pgc.getCurrentRow()][pgc.getCurrentCol()], pgc.getCurrentRow(), pgc.getCurrentCol());
+                ((SudokuTableModel)table.getModel()).fillValue();
             }
         };
 
         hint.addActionListener(hintAL);
 
         undo = new JButton("Undo");
+        /*
         ActionListener undoAL = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
@@ -78,13 +77,12 @@ public final class GameFrame {
                     }
                 });
             }
-        };
+        };*/
 
       clear = new JButton("Clear");
         ActionListener clearAL = new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
-                table.clearTable();
+                ((SudokuTableModel)table.getModel()).clearTable();
                 }
             };
         clear.addActionListener(clearAL);
@@ -93,7 +91,7 @@ public final class GameFrame {
         newGame.addActionListener(newGameAL);
         //create table
 
-        JTable table = new JTable();
+        table = new JTable();
         table.setModel(new SudokuTableModel(playGrid,answerGrid));
         table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
         table.setCellSelectionEnabled(true);

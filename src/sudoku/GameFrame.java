@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.swing.event.undo.*;
 
 public final class GameFrame {
     /**
@@ -50,7 +51,6 @@ public final class GameFrame {
         });
 
 
-         //create buttons
         hint = new JButton("Hint");
 
         ActionListener hintAL = new ActionListener(){
@@ -59,7 +59,7 @@ public final class GameFrame {
                 SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
                 table.setValueAt(playGrid[pgc.getCurrentRow()][pgc.getCurrentCol()], pgc.getCurrentRow(), pgc.getCurrentCol());
             }
-        }
+        };
 
         hint.addActionListener(hintAL);
 
@@ -70,24 +70,23 @@ public final class GameFrame {
                 table.addUndoableEditListener(new UndoableEditListener() {
                     public void undoableEditHappened(UndoableEditEvent e) {
                         undoManager.addEdit(e.getEdit());
+                        try {
+                            undoManager.undo();
+                        } catch (CannotUndoException e) {
+                            ;
+                        }
                     }
-                try {
-                    undoManager.undo();
-                } catch (CannotUndoException e) {
-                    ;
-                }
+                });
             }
-        }
+        };
 
-
-        clear = new JButton("Clear");
+      clear = new JButton("Clear");
         ActionListener clearAL = new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
                 table.clearTable();
                 }
-            }
-        }
+            };
         clear.addActionListener(clearAL);
 
         newGame = new JButton("New Game");

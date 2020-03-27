@@ -2,16 +2,17 @@ package sudoku;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
+
 class StartFrame {
 
-    static JFrame f;
-    static JLabel l, l1;
-    static JComboBox c1;
-    static JButton b;
-    static ActionListener al;
+    private static JFrame f;
+    private static JLabel l, l1;
+    private static JComboBox c1;
+    private static JButton b;
+    private static ActionListener al;
     private static Difficulty diff = Difficulty.EASY;
 
-    static ItemListener il = new ItemListener() {
+    private static ItemListener il = new ItemListener() {
         @Override
         public void itemStateChanged(ItemEvent e) {
             JComboBox cb = (JComboBox)e.getSource();

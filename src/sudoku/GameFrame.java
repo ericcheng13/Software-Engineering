@@ -14,10 +14,10 @@ class GameFrame {
      */
     private final int WINDOW_WIDTH = 300;
     private final int WINDOW_HEIGHT = 325;
-    static JFrame f;
-    static JLabel l,lb,br;
-    static JButton hint, undo, clear, newGame;
-    static PlayableGridCreator pgc = new PlayableGridCreator();
+    private static JFrame f;
+    private static JLabel l,lb,br;
+    private static JButton hint, undo, clear, newGame;
+    private static PlayableGridCreator pgc = new PlayableGridCreator();
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
@@ -62,7 +62,6 @@ class GameFrame {
         JTable table = new JTable();
         table.setModel(new SudokuTable(playGrid,answerGrid));
         table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
-
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);

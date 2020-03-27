@@ -1,10 +1,12 @@
 package sudoku;
 
 import javax.swing.table.DefaultTableModel;
+import java.util.Optional;
 
 class SudokuTable extends DefaultTableModel {
     Integer[][] originalTable;
     Integer[][] answerTable;
+
     SudokuTable(Integer[][] playGrid, Integer[][] answerTable ){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
@@ -19,5 +21,6 @@ class SudokuTable extends DefaultTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         return Integer.class;
     }
+
 
 }

@@ -2,8 +2,6 @@ package sudoku;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 final class Display{
     GameFrame gameFrame;
@@ -17,6 +15,7 @@ final class Display{
             @Override
             public void actionPerformed(ActionEvent e) {
                 startFrame.setVisible(false);
+                System.out.println("start new game!!");
                 gameFrame = new GameFrame(startFrame.getDifficulty(), newGameActionListener());
                 gameFrame.setVisible(true);
             }

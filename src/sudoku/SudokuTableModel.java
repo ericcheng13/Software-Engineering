@@ -30,5 +30,15 @@ public class SudokuTableModel extends DefaultTableModel {
         }
         fireTableCellUpdated(row, col);
     }
+    
+    public void clearTable() {
+            for (int i = 0; i < this.originalTable.length; i++) {
+                for (int j = 0; j < this.originalTable.length; j++){
+                    if (this.originalTable[i][j] != this.answerTable[i][j]){
+                        this.setValueAt(null, i, j);
+                    }
+                }
+            }
+        }
 
 }

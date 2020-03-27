@@ -50,10 +50,45 @@ public final class GameFrame {
         });
 
 
-        //create buttons
+         //create buttons
         hint = new JButton("Hint");
+
+        ActionListener hintAL = new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                pgc.fillValue(playGrid);
+                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
+                table.setValueAt(playGrid[pgc.getCurrentRow()][pgc.getCurrentCol()], pgc.getCurrentRow(), pgc.getCurrentCol());
+            }
+        }
+
+        hint.addActionListener(hintAL);
+
         undo = new JButton("Undo");
+        ActionListener undoAL = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
+                table.addUndoableEditListener(new UndoableEditListener() {
+                    public void undoableEditHappened(UndoableEditEvent e) {
+                        undoManager.addEdit(e.getEdit());
+                    }
+                try {
+                    undoManager.undo();
+                } catch (CannotUndoException e) {
+                    ;
+                }
+            }
+        }
+
+
         clear = new JButton("Clear");
+        ActionListener clearAL = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
+                table.clearTable();
+                }
+            }
+        }
+        clear.addActionListener(clearAL);
 
         newGame = new JButton("New Game");
         newGame.addActionListener(newGameAL);

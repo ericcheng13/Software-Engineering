@@ -137,9 +137,11 @@ public final class GameFrame {
     }
 
     public static Integer[][] makeIntegerGrid(int[][] input){
-        Integer[][] returnGrid = new Integer[9][9];
-        for(int i = 0; i<9;i++){
-            for(int j = 0; j<9;j++){
+        int rows = input.length;
+        int cols = input[0].length;
+        Integer[][] returnGrid = new Integer[rows][cols];
+        for(int i = 0; i<rows;i++){
+            for(int j = 0; j<cols;j++){
                 returnGrid[i][j] = (input[i][j] == 0 )? null : input[i][j];
             }
         }

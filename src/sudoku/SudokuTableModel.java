@@ -13,6 +13,7 @@ public class SudokuTableModel extends DefaultTableModel {
         this.originalTable = playGrid;
         this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
         this.pgc = pgc;
+
     }
 
     @Override
@@ -60,6 +61,10 @@ public class SudokuTableModel extends DefaultTableModel {
                 }
             }
         }
+    }
+
+    public boolean isValueValid(int row, int col){
+        return (this.getValueAt(row,col)==null)||pgc.isLegal(row, col, ((Integer)this.getValueAt(row,col)).intValue(),dataVector);
     }
 
 

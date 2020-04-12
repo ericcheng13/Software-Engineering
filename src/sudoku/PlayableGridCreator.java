@@ -1,15 +1,15 @@
 package sudoku;
 
-import sudoku.CreateGrid;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Vector;
 
 public class PlayableGridCreator {
   private int[][] playable;
   public int[][] mat;
   private int[] order;
+  private static final int NULL = 0;
 
   public PlayableGridCreator(){
     CreateGrid cg = new CreateGrid();
@@ -37,8 +37,8 @@ public class PlayableGridCreator {
       if (playable[i][j] != 0) {
         int currval1 = playable[i][j];
         int currval2 = playable[8-i][8-j];
-        playable[i][j] = 0;
-        playable[8-i][8-j] = 0;
+        playable[i][j] = NULL;
+        playable[8-i][8-j] = NULL;
         if (numSolutions(0, 0, playable, 0) != 1) {
           playable[i][j] = currval1;
           playable[8-i][8-j] = currval2;
@@ -55,11 +55,11 @@ public class PlayableGridCreator {
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;
-      if (playable[i][j] != 0) {
+      if (playable[i][j] != NULL) {
         int currval1 = playable[i][j];
         int currval2 = playable[8-i][8-j];
-        playable[i][j] = 0;
-        playable[8-i][8-j] = 0;
+        playable[i][j] = NULL;
+        playable[8-i][8-j] = NULL;
         if (numSolutions(0, 0, playable, 0) != 1) {
           playable[i][j] = currval1;
           playable[8-i][8-j] = currval2;
@@ -69,16 +69,16 @@ public class PlayableGridCreator {
     return playable;
   }
 
-  //Creates a playable grid with medium difficulty. Check 30 individual values and tries to remove them.
+  //Creates a playable grid with medium difficulty. Check 50 individual values and tries to remove them.
   public int[][] medium() {
     playable = mat;
-    for (int num = 0; num < 30; num++){
+    for (int num = 0; num < 50; num++){
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;
-      if (playable[i][j] != 0) {
+      if (playable[i][j] != NULL) {
         int currval = playable[i][j];
-        playable[i][j] = 0;
+        playable[i][j] = NULL;
         if (numSolutions(0, 0, playable, 0) != 1) {
           playable[i][j] = currval;
         }
@@ -92,9 +92,9 @@ public class PlayableGridCreator {
     for (int position: order) {
       int i = (position / 9);
       int j = position % 9;
-      if (playable[i][j] != 0) {
+      if (playable[i][j] != NULL) {
         int currval = playable[i][j];
-        playable[i][j] = 0;
+        playable[i][j] = NULL;
         if (numSolutions(0, 0, playable, 0) != 1) {
           playable[i][j] = currval;
         }
@@ -132,7 +132,7 @@ public class PlayableGridCreator {
     // search for 2 solutions instead of 1
     // break, if 2 solutions are found
     for (int val = 1; val <= 9 && count < 2; ++val) {
-      if (islegal(i,j,val,mat)) {
+      if (isLegal(i,j,val,mat)) {
         mat[i][j] = val;
         // add additional solutions
         count = numSolutions(i+1,j,mat, count);
@@ -142,14 +142,14 @@ public class PlayableGridCreator {
     return count;
   }
 
-  private boolean islegal(int i, int j, int val, int[][] mat) {
+  public static boolean isLegal(int i, int j, int val, int[][] mat) {
     for (int d = 0; d < mat.length; d++) {
-      if (mat[i][d] == val) {
+      if (mat[i][d] == val && d != j && mat[i][d] != NULL) {
         return false;
       }
     }
-    for (int r = 0; r < mat.length; r++) {
-      if (mat[r][j] == val) {
+    for (int r = 0; r < mat[i].length; r++) {
+      if (mat[r][j] == val && r!=i && mat[r][j] != NULL) {
         return false;
       }
     }
@@ -160,7 +160,7 @@ public class PlayableGridCreator {
         r < boxRowStart + sqrt; r++) {
       for (int d = boxColStart;
           d < boxColStart + sqrt; d++) {
-        if (mat[r][d] == val) {
+        if (mat[r][d] == val && r != i && d != j && mat[r][d] != NULL) {
           return false;
         }
       }
@@ -168,13 +168,28 @@ public class PlayableGridCreator {
     return true;
   }
 
+  public static boolean isLegal(int row, int col, int value, Vector<Vector> dataVector){
+    return isLegal(row,col,value,to2DimArray(dataVector));
+  }
+
+
+  public static int[][] to2DimArray(Vector<Vector> v) {
+    int[][] out = new int[v.size()][v.get(0).size()];
+    for (int i = 0; i < out.length; i++) {
+      for (int j = 0; j < out[0].length; j++) {
+        Integer val = ((Integer) v.get(i).get(j));
+        out[i][j] = val != null ? val.intValue() : NULL;
+      }
+    }
+    return out;
+  }
 
   
-  public String printMat(int [][] mat){
+  public static String printMat(int [][] mat){
     StringBuilder sb = new StringBuilder();
     for (int i=0; i<9; i++) {
       for (int j = 0; j < 9; j++) {
-        sb.append(mat[i][j]);
+        sb.append(mat[i][j]+" ");
       }
       sb.append(" \n");
     }

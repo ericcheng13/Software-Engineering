@@ -184,6 +184,10 @@ public class PlayableGridCreator {
     return out;
   }
 
+  public boolean isCorrect(int row, int col, Integer val){
+    return val!=null && val.equals(mat[row][col]);
+  }
+
   
   public static String printMat(int [][] mat){
     StringBuilder sb = new StringBuilder();

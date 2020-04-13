@@ -9,7 +9,8 @@ public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
     private final int THIN = 0;
     private final Color lightBlue=new Color(165,255, 245);
     private final Color lightGrey=new Color(193, 193, 193);
-    private final Color lightRed = new Color(255, 103, 118);
+    private final Color lightRed = new Color(255, 193,193);
+    //private final Color greyRed =  new Color(255, 103, 118);
     public SudokuTableCellRenderer(){
         super.setOpaque(true);
     }
@@ -19,6 +20,7 @@ public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
         SudokuTableModel tableModel = (SudokuTableModel) table.getModel();
         //emphasizes 3 by 3 grid
         this.setBorder(BorderFactory.createMatteBorder((row) % 3 == 0 ? THICK : THIN, (col) % 3 == 0 ? THICK : THIN, (row+1) % 3 == 0 ? THICK : THIN, (col+1) % 3 == 0 ? THICK : THIN, Color.black));
+        this.setHorizontalAlignment(CENTER);
 
         if (!table.isCellEditable(row,col)) {
             this.setBackground(lightGrey);

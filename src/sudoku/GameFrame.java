@@ -12,7 +12,7 @@ public final class GameFrame {
      * includes sudoku grid, buttons for Hint, Verify, Undo, Clear, and New Game
      */
     private final int WINDOW_WIDTH = 300;
-    private final int WINDOW_HEIGHT = 325;
+    private final int WINDOW_HEIGHT = 420;
     private static JFrame f;
     private static JLabel l,lb,br;
     private static JButton hint, undo, clear, newGame;
@@ -37,7 +37,6 @@ public final class GameFrame {
                 break;
         }
         answerGrid = makeIntegerGrid(pgc.mat);
-        pgc.printMat(pgc.mat);
         this.newGameAL = newGameAL;
         createFrame();
     }
@@ -52,15 +51,6 @@ public final class GameFrame {
         });
 
 
-        hint = new JButton("Hint");
-
-        ActionListener hintAL = new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                ((SudokuTableModel)table.getModel()).fillValue();
-            }
-        };
-
-        hint.addActionListener(hintAL);
 
         undo = new JButton("Undo");
         /*
@@ -80,13 +70,6 @@ public final class GameFrame {
             }
         };*/
 
-      clear = new JButton("Clear");
-        ActionListener clearAL = new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                ((SudokuTableModel)table.getModel()).clearTable();
-                }
-            };
-        clear.addActionListener(clearAL);
 
         newGame = new JButton("New Game");
         newGame.addActionListener(newGameAL);
@@ -97,16 +80,31 @@ public final class GameFrame {
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        table.setRowHeight(20);
+        table.setRowHeight(30);
         table.doLayout();
-        table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 20));
+        table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
 
+        clear = new JButton("Clear");
+        ActionListener clearAL = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                ((SudokuTableModel)table.getModel()).clearTable();
+            }
+        };
+        clear.addActionListener(clearAL);
+
+        hint = new JButton("Hint");
+        ActionListener hintAL = new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                ((SudokuTableModel)table.getModel()).fillValue();
+            }
+        };
+        hint.addActionListener(hintAL);
 
 
         //title label
         l = new JLabel("Sudoku Unlimited");
         l.setAlignmentX(Component.CENTER_ALIGNMENT);
-        Font font = new Font(l.getFont().getFontName(), Font.BOLD,20);
+        Font font = new Font(l.getFont().getFontName(), Font.BOLD,30);
         l.setFont(font);
         //empty labels for spacing
         lb = new JLabel(" ");

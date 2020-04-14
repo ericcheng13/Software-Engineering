@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/test/GameFrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/GameFrameTest.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,13 +73,25 @@
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PlayableGridCreator">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.CreateGridTest.newGridTest">
     <configuration name="PlayableGridCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreator" />
       <module name="Software-Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,7 +104,7 @@
       <module name="Sudoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,48 +112,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayableGridCreatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku" />
+    <configuration name="CreateGridTest.newGridTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Software-Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sudoku" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayableGridCreatorTest.isLegalVectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sudoku.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sudoku" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreatorTest" />
-      <option name="METHOD_NAME" value="isLegalVectorTest" />
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.CreateGridTest" />
+      <option name="METHOD_NAME" value="newGridTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayableGridCreatorTest.to2DimArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku" />
+    <configuration name="CreateGridTest.printMatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Software-Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sudoku.*" />
+          <option name="PATTERN" value="sudoku.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sudoku" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreatorTest" />
-      <option name="METHOD_NAME" value="to2DimArrayTest" />
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.CreateGridTest" />
+      <option name="METHOD_NAME" value="printMatTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateGridTest.randomizerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Software-Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sudoku.test" />
+      <option name="MAIN_CLASS_NAME" value="sudoku.test.CreateGridTest" />
+      <option name="METHOD_NAME" value="randomizerTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,18 +162,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Runner" />
-      <item itemvalue="JUnit.PlayableGridCreatorTest" />
-      <item itemvalue="JUnit.PlayableGridCreatorTest.isLegalVectorTest" />
-      <item itemvalue="JUnit.PlayableGridCreatorTest.to2DimArrayTest" />
       <item itemvalue="Application.PlayableGridCreator" />
+      <item itemvalue="JUnit.CreateGridTest.randomizerTest" />
+      <item itemvalue="JUnit.CreateGridTest.printMatTest" />
+      <item itemvalue="JUnit.CreateGridTest.newGridTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreateGridTest.newGridTest" />
+        <item itemvalue="JUnit.CreateGridTest.printMatTest" />
+        <item itemvalue="JUnit.CreateGridTest.randomizerTest" />
         <item itemvalue="Application.PlayableGridCreator" />
         <item itemvalue="Application.Runner" />
-        <item itemvalue="JUnit.PlayableGridCreatorTest" />
-        <item itemvalue="JUnit.PlayableGridCreatorTest.isLegalVectorTest" />
-        <item itemvalue="JUnit.PlayableGridCreatorTest.to2DimArrayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582184935218</updated>
+      <workItem from="1586885248776" duration="1491000" />
     </task>
     <task id="LOCAL-00001" summary="too complex, going to prototype differently">
       <created>1582191492914</created>
@@ -288,6 +303,9 @@
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

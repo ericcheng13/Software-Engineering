@@ -30,4 +30,5 @@ class GameFrameTest {
                 ,{5,6,7,1,2,3,1,2,3},{5,6,7,1,2,3,1,2,3},{5,6,7,1,2,3,1,2,3}};
         assertEquals(gf.TESTMakeIntegerGrid(grid)[0][0], Integer.valueOf(1));
     }
+
 }

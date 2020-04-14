@@ -3,6 +3,7 @@ package sudoku;
 import javax.swing.*;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoManager;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -52,25 +53,6 @@ public final class GameFrame {
 
 
 
-        undo = new JButton("Undo");
-        /*
-        ActionListener undoAL = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                SudokuTableModel table = new SudokuTableModel(playGrid, answerGrid);
-                table.addUndoableEditListener(new UndoableEditListener() {
-                    public void undoableEditHappened(UndoableEditEvent e) {
-                        undoManager.addEdit(e.getEdit());
-                        try {
-                            undoManager.undo();
-                        } catch (CannotUndoException e) {
-                            ;
-                        }
-                    }
-                });
-            }
-        };*/
-
-
         newGame = new JButton("New Game");
         newGame.addActionListener(newGameAL);
         //create table
@@ -83,6 +65,21 @@ public final class GameFrame {
         table.setRowHeight(30);
         table.doLayout();
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
+
+       undo = new JButton("Undo");
+
+        UndoableTableModel undoTable = new UndoableTableModel(new SudokuTableModel(playGrid, pgc));
+
+        UndoManager manage = new UndoManager();
+        undoTable.addUndoableEditListener(manage);
+
+        Action undoAction = new UndoAction(manage);
+
+        undo.addActionListener(undoAction);
+
+        table.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), "undoKeyStroke");
+        table.getActionMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), undoAction);
+
 
         clear = new JButton("Clear");
         ActionListener clearAL = new ActionListener() {

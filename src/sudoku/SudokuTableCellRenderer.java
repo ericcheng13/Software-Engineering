@@ -10,7 +10,7 @@ public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
     private final Color lightBlue=new Color(165,255, 245);
     private final Color lightGrey=new Color(193, 193, 193);
     private final Color lightRed = new Color(255, 193,193);
-    //private final Color greyRed =  new Color(255, 103, 118);
+    private final Color greyRed =  new Color(255, 103, 118);
     public SudokuTableCellRenderer(){
         super.setOpaque(true);
     }
@@ -22,7 +22,10 @@ public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
         this.setBorder(BorderFactory.createMatteBorder((row) % 3 == 0 ? THICK : THIN, (col) % 3 == 0 ? THICK : THIN, (row+1) % 3 == 0 ? THICK : THIN, (col+1) % 3 == 0 ? THICK : THIN, Color.black));
         this.setHorizontalAlignment(CENTER);
 
-        if (!table.isCellEditable(row,col)) {
+        if (!table.isCellEditable(row,col) && !tableModel.isValueValid(row, col)){
+            this.setBackground(greyRed);
+        }
+        else if (!table.isCellEditable(row,col)) {
             this.setBackground(lightGrey);
         }
         else if(table.isCellSelected(row, col)){

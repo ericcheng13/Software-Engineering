@@ -5,9 +5,9 @@ import java.util.Random;
 import java.util.Vector;
 
 public class SudokuTableModel extends DefaultTableModel {
-    Integer[][] originalTable;
-    Integer[][] answerTable;
-    PlayableGridCreator pgc;
+    private Integer[][] originalTable;
+    private Integer[][] answerTable;
+    private PlayableGridCreator pgc;
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
@@ -54,9 +54,8 @@ public class SudokuTableModel extends DefaultTableModel {
             for (int j = 0; j < this.originalTable[0].length; j++){
                 Integer val = (Integer)this.getValueAt(i,j);
                 if (val != null && !pgc.isCorrect(i,j,val)){
-                    this.setValueAt(answerTable[i][j], i, j);
+                    this.setValueAt(this.answerTable[i][j], i, j);
                     corrected = true;
-                    System.out.println("corrected inside change loop");
                     break CHANGE_VAL_LOOP;
                 }
             }
@@ -67,9 +66,8 @@ public class SudokuTableModel extends DefaultTableModel {
             int row = Math.floorMod(rand,9);
             int col = Math.floorDiv(rand,9);
             if(isCellEditable(row,col) && this.getValueAt(row,col)==null){
-                this.setValueAt(answerTable[row][col],row,col);
+                this.setValueAt(this.answerTable[row][col],row,col);
                 corrected = true;
-                System.out.println("corrected inside new loop: "+row+" "+col+" to "+answerTable[row][col]);
             }
         }
     }

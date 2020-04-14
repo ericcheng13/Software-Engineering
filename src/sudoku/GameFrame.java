@@ -13,10 +13,10 @@ public final class GameFrame {
      * includes sudoku grid, buttons for Hint, Verify, Undo, Clear, and New Game
      */
     private final int WINDOW_WIDTH = 300;
-    private final int WINDOW_HEIGHT = 420;
+    private final int WINDOW_HEIGHT = 440;
     private static JFrame f;
     private static JLabel l,lb,br;
-    private static JButton hint, undo, clear, newGame;
+    private static JButton hint, undo, clear, newGame, solution;
     private static PlayableGridCreator pgc;
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
@@ -97,6 +97,8 @@ public final class GameFrame {
         };
         hint.addActionListener(hintAL);
 
+        solution = new JButton("Solution");
+        solution.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         //title label
         l = new JLabel("Sudoku Unlimited");
@@ -124,6 +126,7 @@ public final class GameFrame {
         buttonPanel.add(clear);
         buttonPanel.add(newGame);
         listPanel.add(buttonPanel);
+        listPanel.add(solution);
         //create window
         f.add(listPanel);
         f.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);

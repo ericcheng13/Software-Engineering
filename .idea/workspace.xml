@@ -49,10 +49,12 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vennDiagram" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -70,7 +72,20 @@
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Runner">
+  <component name="RunManager" selected="Application.PlayableGridCreator">
+    <configuration name="PlayableGridCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreator" />
+      <module name="Software-Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.Runner" />
       <module name="Sudoku" />
@@ -131,35 +146,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SudokuTableModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sudoku" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sudoku.test" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.test.SudokuTableModelTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Runner" />
-      <item itemvalue="JUnit.SudokuTableModelTest" />
       <item itemvalue="JUnit.PlayableGridCreatorTest" />
       <item itemvalue="JUnit.PlayableGridCreatorTest.isLegalVectorTest" />
       <item itemvalue="JUnit.PlayableGridCreatorTest.to2DimArrayTest" />
+      <item itemvalue="Application.PlayableGridCreator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PlayableGridCreator" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="JUnit.PlayableGridCreatorTest" />
         <item itemvalue="JUnit.PlayableGridCreatorTest.isLegalVectorTest" />
         <item itemvalue="JUnit.PlayableGridCreatorTest.to2DimArrayTest" />
-        <item itemvalue="JUnit.SudokuTableModelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -372,39 +372,39 @@
     <state x="435" y="194" key="git4idea.merge.GitMergeDialog/0.23.1280.728@0.23.1280.728" timestamp="1586882058685" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest_makeIntegerGrid.ic" NAME="GameFrameTest.makeIntegerGrid Coverage Results" MODIFIED="1585311493239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest.ic" NAME="GameFrameTest Coverage Results" MODIFIED="1585328217015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1585328562957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$PlayableGridCreatorTest.ic" NAME="PlayableGridCreatorTest Coverage Results" MODIFIED="1585328138695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$RunnerTest.ic" NAME="RunnerTest Coverage Results" MODIFIED="1585328226967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableModelTest.ic" NAME="SudokuTableModelTest Coverage Results" MODIFIED="1585328252980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableCellRendererTest.ic" NAME="SudokuTableCellRendererTest Coverage Results" MODIFIED="1585328245454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$StartFrameTest.ic" NAME="StartFrameTest Coverage Results" MODIFIED="1585328237630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.exec" NAME="DisplayTest Coverage Results" MODIFIED="1585277426557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
+    <SUITE FILE_PATH="coverage/Software_Engineering$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1586879932430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableModelTest.ic" NAME="SudokuTableModelTest Coverage Results" MODIFIED="1585328252980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest.ic" NAME="GameFrameTest Coverage Results" MODIFIED="1585328217015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.ic" NAME="DisplayTest Coverage Results" MODIFIED="1585328207739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
       <FILTER>sudoku.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Software_Engineering$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1586879932430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sudoku$PlayableGridCreatorTest.ic" NAME="PlayableGridCreatorTest Coverage Results" MODIFIED="1585328138695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableCellRendererTest.ic" NAME="SudokuTableCellRendererTest Coverage Results" MODIFIED="1585328245454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest_makeIntegerGrid.ic" NAME="GameFrameTest.makeIntegerGrid Coverage Results" MODIFIED="1585311493239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.exec" NAME="DisplayTest Coverage Results" MODIFIED="1585277426557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
       <FILTER>sudoku.*</FILTER>
     </SUITE>
   </component>

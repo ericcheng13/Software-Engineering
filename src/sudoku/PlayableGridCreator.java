@@ -51,7 +51,7 @@ public class PlayableGridCreator {
   //Creates an easy playable grid. The number of removed values is set to 25
   public int[][] easy() {
     playable = mat;
-    for (int num = 0; num < 25; num++){
+    for (int num = 0; num < 20; num++){
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;
@@ -72,7 +72,7 @@ public class PlayableGridCreator {
   //Creates a playable grid with medium difficulty. Check 50 individual values and tries to remove them.
   public int[][] medium() {
     playable = mat;
-    for (int num = 0; num < 50; num++){
+    for (int num = 0; num < 70; num++){
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;
@@ -209,7 +209,7 @@ public class PlayableGridCreator {
      int[][] grid = cg.newGrid();
      PlayableGridCreator pgc = new PlayableGridCreator();
     System.out.println(pgc.printMat(pgc.getMat()));
-     System.out.println(pgc.printMat(pgc.hard()));
+     System.out.println(pgc.printMat(pgc.medium()));
      System.out.println(pgc.numSolutions(0,0,grid,0));
      }
 }

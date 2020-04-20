@@ -66,6 +66,7 @@ public final class GameFrame {
         table.doLayout();
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
 
+        //undo button
        undo = new JButton("Undo");
 
         UndoableTableModel undoTable = new UndoableTableModel(new SudokuTableModel(playGrid, pgc));
@@ -80,7 +81,7 @@ public final class GameFrame {
         table.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), "undoKeyStroke");
         table.getActionMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), undoAction);
 
-
+        //clear button
         clear = new JButton("Clear");
         ActionListener clearAL = new ActionListener() {
             public void actionPerformed(ActionEvent e){
@@ -89,6 +90,7 @@ public final class GameFrame {
         };
         clear.addActionListener(clearAL);
 
+        //hint button
         hint = new JButton("Hint");
         ActionListener hintAL = new ActionListener(){
             public void actionPerformed(ActionEvent e) {
@@ -97,6 +99,7 @@ public final class GameFrame {
         };
         hint.addActionListener(hintAL);
 
+        //solutions button
         solution = new JButton("Solution");
         solution.setAlignmentX(Component.CENTER_ALIGNMENT);
 

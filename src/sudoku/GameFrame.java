@@ -102,6 +102,12 @@ public final class GameFrame {
         //solutions button
         solution = new JButton("Solution");
         solution.setAlignmentX(Component.CENTER_ALIGNMENT);
+      ActionListener solutionAL = new ActionListener(){
+      public void actionPerformed(ActionEvent e) {
+        ((SudokuTableModel) table.getModel()).fillAll();
+      }
+      };
+      solution.addActionListener(solutionAL);
 
         //title label
         l = new JLabel("Sudoku Unlimited");

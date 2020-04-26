@@ -75,20 +75,18 @@ public class SudokuTableModel extends DefaultTableModel {
         }
     }
 
-    public boolean isValueValid(int row, int col){
-        return (this.getValueAt(row,col)==null)||pgc.isLegal(row, col, ((Integer)this.getValueAt(row,col)).intValue(),dataVector);
-    }
-
-    public static String printMat(Integer[][] mat){
-        StringBuilder sb = new StringBuilder();
-        for (int i=0; i<9; i++) {
-            for (int j = 0; j < 9; j++) {
-                sb.append(mat[i][j]+" ");
+    public void fillAll() {
+        for (int i = 0; i < this.originalTable.length; i++) {
+            for (int j = 0; j < this.originalTable[0].length; j++) {
+                this.setValueAt(this.answerTable[i][j],i,j);
             }
-            sb.append(" \n");
         }
-        return sb.toString();
+
+
     }
 
-
+    public boolean isValueValid(int row, int col) {
+        return (this.getValueAt(row, col) == null) || pgc
+            .isLegal(row, col, ((Integer) this.getValueAt(row, col)).intValue(), dataVector);
+    }
 }

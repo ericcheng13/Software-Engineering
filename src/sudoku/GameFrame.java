@@ -1,5 +1,6 @@
 package sudoku;
 
+import java.util.jar.JarOutputStream;
 import javax.swing.*;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
@@ -22,6 +23,7 @@ public final class GameFrame {
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
     private static JTable table;
+    private int emptyCellCount = 0;
 
 
     public GameFrame(Difficulty diff, ActionListener newGameAL){
@@ -91,10 +93,25 @@ public final class GameFrame {
         clear.addActionListener(clearAL);
 
         //hint button
+
+      for(int i = 0; i < playGrid.length; i++){
+        for(int j = 0; j < playGrid.length; j++){
+         if(playGrid[i][j] == null) {
+           emptyCellCount++;
+         }
+         }
+      }
+
         hint = new JButton("Hint");
         ActionListener hintAL = new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                ((SudokuTableModel)table.getModel()).fillValue();
+              if(emptyCellCount > 0) {
+                ((SudokuTableModel) table.getModel()).fillValue();
+                emptyCellCount= emptyCellCount - 2;
+              }
+              else{
+                JOptionPane.showMessageDialog(null, "No more Hints" );
+              }
             }
         };
         hint.addActionListener(hintAL);
@@ -103,11 +120,11 @@ public final class GameFrame {
         solution = new JButton("Solution");
         solution.setAlignmentX(Component.CENTER_ALIGNMENT);
       ActionListener solutionAL = new ActionListener(){
-      public void actionPerformed(ActionEvent e) {
-        ((SudokuTableModel) table.getModel()).fillAll();
-      }
-      };
-      solution.addActionListener(solutionAL);
+        public void actionPerformed(ActionEvent e) {
+            ((SudokuTableModel) table.getModel()).fillAll();
+           }
+        };
+        solution.addActionListener(solutionAL);
 
         //title label
         l = new JLabel("Sudoku Unlimited");

@@ -85,8 +85,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Runner">
-    <configuration name="PlayableGridCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.PlayableGridCreator">
+    <configuration name="CreateGrid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sudoku.CreateGrid" />
+      <module name="Software-Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sudoku.GameFrame" />
+      <module name="Software-Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayableGridCreator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.PlayableGridCreator" />
       <module name="Software-Engineering" />
       <extension name="coverage">
@@ -144,36 +170,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateGridTest.randomizerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Software-Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sudoku.test" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.test.CreateGridTest" />
-      <option name="METHOD_NAME" value="randomizerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Runner" />
       <item itemvalue="Application.PlayableGridCreator" />
-      <item itemvalue="JUnit.CreateGridTest.randomizerTest" />
+      <item itemvalue="Application.Runner" />
       <item itemvalue="JUnit.CreateGridTest.printMatTest" />
       <item itemvalue="JUnit.CreateGridTest.newGridTest" />
+      <item itemvalue="Application.GameFrame" />
+      <item itemvalue="Application.CreateGrid" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Runner" />
+        <item itemvalue="Application.CreateGrid" />
+        <item itemvalue="Application.GameFrame" />
         <item itemvalue="JUnit.CreateGridTest.newGridTest" />
         <item itemvalue="JUnit.CreateGridTest.printMatTest" />
-        <item itemvalue="JUnit.CreateGridTest.randomizerTest" />
-        <item itemvalue="Application.PlayableGridCreator" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +199,8 @@
       <option name="presentableId" value="Default" />
       <updated>1582184935218</updated>
       <workItem from="1586885248776" duration="3286000" />
-      <workItem from="1587330453729" duration="2713000" />
+      <workItem from="1587330453729" duration="3359000" />
+      <workItem from="1587925938971" duration="6883000" />
     </task>
     <task id="LOCAL-00001" summary="too complex, going to prototype differently">
       <created>1582191492914</created>

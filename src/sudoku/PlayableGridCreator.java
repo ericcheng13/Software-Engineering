@@ -6,14 +6,20 @@ import java.util.List;
 import java.util.Vector;
 
 public class PlayableGridCreator {
-  private int[][] playable;
   public int[][] mat;
+  public int[][] playable;
   private int[] order;
   private static final int NULL = 0;
 
   public PlayableGridCreator(){
     CreateGrid cg = new CreateGrid();
     mat = cg.newGrid();
+    playable = new int[9][9];
+    for(int i = 0; i < 9; i++){
+      for(int j = 0; j < 9; j++){
+        playable[i][j] = mat[i][j];
+      }
+    }
     order = new int[80];
     order = generateOrder();
   }
@@ -29,7 +35,6 @@ public class PlayableGridCreator {
    */
 
   public int[][] easy(int number) {
-    playable = mat;
     for (int num = 0; num < number; num++){
       int position = order[num];
       int i = (position / 9);
@@ -50,8 +55,7 @@ public class PlayableGridCreator {
 
   //Creates an easy playable grid. The number of removed values is set to 25
   public int[][] easy() {
-    playable = mat;
-    for (int num = 0; num < 20; num++){
+    for (int num = 0; num < 10; num++){
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;
@@ -71,7 +75,6 @@ public class PlayableGridCreator {
 
   //Creates a playable grid with medium difficulty. Check 50 individual values and tries to remove them.
   public int[][] medium() {
-    playable = mat;
     for (int num = 0; num < 70; num++){
       int position = order[num];
       int i = (position / 9);
@@ -210,6 +213,7 @@ public class PlayableGridCreator {
      PlayableGridCreator pgc = new PlayableGridCreator();
     System.out.println(pgc.printMat(pgc.getMat()));
      System.out.println(pgc.printMat(pgc.medium()));
+    System.out.println(pgc.printMat(pgc.getMat()));
      System.out.println(pgc.numSolutions(0,0,grid,0));
      }
 }

@@ -2,11 +2,15 @@ package sudoku;
 
 public class CreateGrid {
 
-  private int[][] mat = new int[9][9];
+  private int[][] grid = new int[9][9];
 
   public int[][] newGrid(){
     fillValues();
-    return mat;
+    return this.grid;
+  }
+
+  public int[][] getGrid(){
+    return this.grid;
   }
 
   public static int randomizer(int num) {
@@ -33,7 +37,7 @@ public class CreateGrid {
           num = randomizer(9);
         }
         while (!blockCheck(row, col, num));
-        mat[row+i][col+j] = num;
+        grid[row+i][col+j] = num;
       }
     }
   }
@@ -48,7 +52,7 @@ public class CreateGrid {
   // check in the row for existence
   private boolean rowCheck(int i,int num) {
     for (int j = 0; j<9; j++)
-      if (mat[i][j] == num)
+      if (grid[i][j] == num)
         return false;
     return true;
   }
@@ -56,7 +60,7 @@ public class CreateGrid {
   // check in the row for existence
   private boolean colCheck(int j,int num) {
     for (int i = 0; i<9; i++)
-      if (mat[i][j] == num)
+      if (grid[i][j] == num)
         return false;
     return true;
   }
@@ -65,7 +69,7 @@ public class CreateGrid {
   private boolean blockCheck(int rowStart, int colStart, int num) {
     for (int i = 0; i<3; i++)
       for (int j = 0; j<3; j++)
-        if (mat[rowStart+i][colStart+j]==num)
+        if (grid[rowStart+i][colStart+j]==num)
           return false;
 
     return true;
@@ -100,10 +104,10 @@ public class CreateGrid {
 
     for (int num = 1; num<=9; num++) {
       if (check(i, j, num)) {
-        mat[i][j] = num;
+        grid[i][j] = num;
         if (fillRemaining(i, j+1))
           return true;
-        mat[i][j] = 0;
+        grid[i][j] = 0;
       }
     }
     return false;
@@ -113,7 +117,7 @@ public class CreateGrid {
     StringBuilder sb = new StringBuilder();
     for (int i=0; i<9; i++) {
       for (int j = 0; j < 9; j++) {
-        sb.append(mat[i][j]);
+        sb.append(grid[i][j]);
       }
       sb.append(" \n");
     }

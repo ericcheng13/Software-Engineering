@@ -55,7 +55,7 @@ public class PlayableGridCreator {
 
   //Creates an easy playable grid. The number of removed values is set to 25
   public int[][] easy() {
-    for (int num = 0; num < 10; num++){
+    for (int num = 0; num < 15; num++){
       int position = order[num];
       int i = (position / 9);
       int j = position % 9;

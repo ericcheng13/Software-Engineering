@@ -16,7 +16,7 @@ public final class GameFrame {
     private final int WINDOW_WIDTH = 300;
     private final int WINDOW_HEIGHT = 440;
     private static JFrame f;
-    private static JLabel l,lb,br;
+    private static JLabel l,lh,lb,br;
     private static JButton hint, undo, clear, newGame, solution;
     private static PlayableGridCreator pgc;
     private static Integer[][] answerGrid;
@@ -110,11 +110,17 @@ public final class GameFrame {
                 emptyCellCount= emptyCellCount - 2;
               }
               else{
-                JOptionPane.showMessageDialog(null, "No more Hints" );
+                JOptionPane.showMessageDialog(null, "You ran out of Hints" );
               }
             }
         };
-        hint.addActionListener(hintAL);
+
+      //hint label
+      lh = new JLabel("Number of Hints: " + emptyCellCount/2);
+      lh.setAlignmentX(Component.LEFT_ALIGNMENT);
+      Font font = new Font(lh.getFont().getFontName(), Font.BOLD,10);
+      lh.setFont(font);
+      hint.addActionListener(hintAL);
 
         //solutions button
         solution = new JButton("Solution");
@@ -129,7 +135,7 @@ public final class GameFrame {
         //title label
         l = new JLabel("Sudoku Unlimited");
         l.setAlignmentX(Component.CENTER_ALIGNMENT);
-        Font font = new Font(l.getFont().getFontName(), Font.BOLD,30);
+        font = new Font(l.getFont().getFontName(), Font.BOLD,30);
         l.setFont(font);
         //empty labels for spacing
         lb = new JLabel(" ");
@@ -143,6 +149,7 @@ public final class GameFrame {
 
         //add items
         listPanel.add(l);
+        listPanel.add(lh);
         listPanel.add(br);
         listPanel.add(table);
         listPanel.add(lb);

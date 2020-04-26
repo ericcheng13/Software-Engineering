@@ -1,5 +1,6 @@
 package sudoku;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import java.util.Random;
 import java.util.Vector;
@@ -8,7 +9,6 @@ public class SudokuTableModel extends DefaultTableModel {
     private Integer[][] originalTable;
     private Integer[][] answerTable;
     private PlayableGridCreator pgc;
-    public boolean complete = false;
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
@@ -37,7 +37,6 @@ public class SudokuTableModel extends DefaultTableModel {
 
         fireTableCellUpdated(row, col);
     }
-
 
     
     public void clearTable() {

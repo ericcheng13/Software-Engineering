@@ -116,9 +116,9 @@ public final class GameFrame {
         };
 
       //hint label
-      lh = new JLabel("Number of Hints: " + emptyCellCount/2);
+      lh = new JLabel("You have " + emptyCellCount/2 + " hints.");
       lh.setAlignmentX(Component.LEFT_ALIGNMENT);
-      Font font = new Font(lh.getFont().getFontName(), Font.BOLD,10);
+      Font font = new Font(lh.getFont().getFontName(), Font.ITALIC,10);
       lh.setFont(font);
       hint.addActionListener(hintAL);
 

@@ -85,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PlayableGridCreator">
+  <component name="RunManager" selected="Application.Runner">
     <configuration name="CreateGrid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.CreateGrid" />
       <module name="Software-Engineering" />
@@ -200,7 +200,7 @@
       <updated>1582184935218</updated>
       <workItem from="1586885248776" duration="3286000" />
       <workItem from="1587330453729" duration="3359000" />
-      <workItem from="1587925938971" duration="6883000" />
+      <workItem from="1587925938971" duration="7208000" />
     </task>
     <task id="LOCAL-00001" summary="too complex, going to prototype differently">
       <created>1582191492914</created>

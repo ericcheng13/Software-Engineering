@@ -8,14 +8,15 @@ public class SudokuTableModel extends DefaultTableModel {
     private Integer[][] originalTable;
     private Integer[][] answerTable;
     private PlayableGridCreator pgc;
+    public boolean complete = false;
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
-        this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
         this.pgc = pgc;
-
+        this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
     }
+
 
     @Override
     public boolean isCellEditable(int row, int column){
@@ -32,10 +33,12 @@ public class SudokuTableModel extends DefaultTableModel {
         if((value==null)||( value != null && value.getClass()==Integer.class && ((Integer)value <=9 && (Integer)value >=1 ))) { //checks if value is within 1-9 range or empty
             Vector<Object> rowVector = dataVector.elementAt(row);
             rowVector.setElementAt(value, col);
-
         }
+
         fireTableCellUpdated(row, col);
     }
+
+
     
     public void clearTable() {
             for (int i = 0; i < this.originalTable.length; i++) {
@@ -74,6 +77,17 @@ public class SudokuTableModel extends DefaultTableModel {
 
     public boolean isValueValid(int row, int col){
         return (this.getValueAt(row,col)==null)||pgc.isLegal(row, col, ((Integer)this.getValueAt(row,col)).intValue(),dataVector);
+    }
+
+    public static String printMat(Integer[][] mat){
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<9; i++) {
+            for (int j = 0; j < 9; j++) {
+                sb.append(mat[i][j]+" ");
+            }
+            sb.append(" \n");
+        }
+        return sb.toString();
     }
 
 

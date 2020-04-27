@@ -28,6 +28,7 @@ public final class GameFrame {
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
     private static JTable table;
+    private static JPanel finalPanel;
     private int emptyCellCount = 0;
     private UndoManager undoManager;
 
@@ -61,119 +62,19 @@ public final class GameFrame {
             }
         });
 
+        //create all objects
+        createTable();
+        createClearButton();
+        createHintButton();
+        createNewGameButton();
+        createSolutionButton();
+        createLabels();
+        createUndoButton();
 
-
-        newGame = new JButton("New Game");
-        newGame.addActionListener(newGameAL);
-        //create table
-        table = new JTable();
-        table.setModel(new SudokuTableModel(playGrid,pgc));
-        table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
-        table.setCellSelectionEnabled(true);
-        table.setAlignmentX(Component.CENTER_ALIGNMENT);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        table.setRowHeight(30);
-        table.doLayout();
-        table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
-
-        //undo button
-        undoBtn = new JButton("Undo");
-        Action undoAction = new undoAction();
-        undoBtn.addActionListener(undoAction);
-        undoManager = new UndoManager();
-        SudokuTableModel.getUndoSupport().addUndoableEditListener(new UndoAdaptor());
-
-
-        //clear button
-        clear = new JButton("Clear");
-        ActionListener clearAL = new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                ((SudokuTableModel)table.getModel()).clearTable();
-            }
-        };
-        clear.addActionListener(clearAL);
-
-        //hint button
-
-      for(int i = 0; i < playGrid.length; i++){
-        for(int j = 0; j < playGrid[0].length; j++){
-         if(playGrid[i][j] == null) {
-           emptyCellCount++;
-         }
-         }
-      }
-
-        hint = new JButton("Hint");
-        ActionListener hintAL = new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-              if(emptyCellCount > 0) {
-                ((SudokuTableModel) table.getModel()).fillValue();
-                emptyCellCount= emptyCellCount - 2;
-                lh.setText("You have " + emptyCellCount/2 + " hints.");
-              }
-              else{
-                JOptionPane.showMessageDialog(null, "You ran out of Hints" );
-              }
-            }
-        };
-
-      //hint label
-      lh = new JLabel("You have " + emptyCellCount/2 + " hints.");
-      lh.setAlignmentX(Component.LEFT_ALIGNMENT);
-      Font font = new Font(lh.getFont().getFontName(), Font.ITALIC,10);
-      lh.setFont(font);
-      hint.addActionListener(hintAL);
-
-      //solutions button
-      solution = new JButton("Solution");
-      solution.setAlignmentX(Component.CENTER_ALIGNMENT);
-      ButtonModel solModel = solution.getModel();
-      solModel.addChangeListener(new ChangeListener() {
-          private boolean needChange = false;
-          @Override
-          public void stateChanged(ChangeEvent e) {
-              if(solModel.isPressed()){
-                  ((SudokuTableModel) table.getModel()).fillAll();
-                  needChange = true;
-              }
-              else if (!solModel.isPressed() && needChange){
-                  ((SudokuTableModel)table.getModel()).clearTable();
-                  needChange = false;
-              }
-
-          }
-      });
-        //title label
-        l = new JLabel("Sudoku Unlimited");
-        l.setAlignmentX(Component.CENTER_ALIGNMENT);
-        font = new Font(l.getFont().getFontName(), Font.BOLD,30);
-        l.setFont(font);
-        //empty labels for spacing
-        lb = new JLabel(" ");
-        br = new JLabel(" ");
-
-        //create panels
-        JPanel listPanel = new JPanel();
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.PAGE_AXIS));
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
-
-        //add items
-        listPanel.add(l);
-        listPanel.add(lh);
-        listPanel.add(br);
-        listPanel.add(table);
-        listPanel.add(lb);
-
-        buttonPanel.add(hint);
-        buttonPanel.add(undoBtn);
-        buttonPanel.add(clear);
-        buttonPanel.add(newGame);
-        listPanel.add(buttonPanel);
-        listPanel.add(solution);
+        createPanel();
 
         //create window
-        f.add(listPanel);
+        f.add(finalPanel);
         f.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
         f.setVisible(false);
 
@@ -189,6 +90,130 @@ public final class GameFrame {
             }
         }
         return returnGrid;
+    }
+
+    private void createPanel(){
+        this.finalPanel = new JPanel();
+        finalPanel.setLayout(new BoxLayout(finalPanel, BoxLayout.PAGE_AXIS));
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
+
+        //add items
+        finalPanel.add(l);
+        finalPanel.add(lh);
+        finalPanel.add(br);
+        finalPanel.add(table);
+        finalPanel.add(lb);
+
+        buttonPanel.add(hint);
+        buttonPanel.add(undoBtn);
+        buttonPanel.add(clear);
+        buttonPanel.add(newGame);
+        finalPanel.add(buttonPanel);
+        finalPanel.add(solution);
+    }
+
+    private void createTable(){
+        table = new JTable();
+        table.setModel(new SudokuTableModel(playGrid,pgc));
+        table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
+        table.setCellSelectionEnabled(true);
+        table.setAlignmentX(Component.CENTER_ALIGNMENT);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.setRowHeight(30);
+        table.doLayout();
+        table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
+    }
+
+    private void createHintButton(){
+        hint = new JButton("Hint");
+        countEmptyCellCount();
+        ActionListener hintAL = new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                if(emptyCellCount > 0) {
+                    ((SudokuTableModel) table.getModel()).fillValue();
+                    emptyCellCount= emptyCellCount - 2;
+                    lh.setText("You have " + emptyCellCount/2 + " hints.");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "You ran out of Hints" );
+                }
+            }
+        };
+
+        hint.addActionListener(hintAL);
+
+    }
+
+    private void createUndoButton(){
+        undoBtn = new JButton("Undo");
+        Action undoAction = new undoAction();
+        undoBtn.addActionListener(undoAction);
+        undoManager = new UndoManager();
+        SudokuTableModel.getUndoSupport().addUndoableEditListener(new UndoAdaptor());
+
+    }
+
+    private void createClearButton(){
+        clear = new JButton("Clear");
+        ActionListener clearAL = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                ((SudokuTableModel)table.getModel()).clearTable();
+            }
+        };
+        clear.addActionListener(clearAL);
+
+    }
+
+    private void createSolutionButton(){
+        solution = new JButton("Solution");
+        solution.setAlignmentX(Component.CENTER_ALIGNMENT);
+        ButtonModel solModel = solution.getModel();
+        solModel.addChangeListener(new ChangeListener() {
+            private boolean needChange = false;
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                if(solModel.isPressed()){
+                    ((SudokuTableModel) table.getModel()).fillAll();
+                    needChange = true;
+                }
+                else if (!solModel.isPressed() && needChange){
+                    ((SudokuTableModel)table.getModel()).clearTable();
+                    needChange = false;
+                }
+
+            }
+        });
+    }
+
+    private void createNewGameButton(){
+        newGame = new JButton("New Game");
+        newGame.addActionListener(newGameAL);
+    }
+
+    private void createLabels(){
+        lh = new JLabel("You have " + emptyCellCount/2 + " hints.");
+        lh.setAlignmentX(Component.LEFT_ALIGNMENT);
+        Font hintFont = new Font(lh.getFont().getFontName(), Font.ITALIC,10);
+        lh.setFont(hintFont);
+        //title label
+        l = new JLabel("Sudoku Unlimited");
+        l.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Font titleFont = new Font(l.getFont().getFontName(), Font.BOLD,30);
+        l.setFont(titleFont);
+        //empty labels for spacing
+        lb = new JLabel(" ");
+        br = new JLabel(" ");
+    }
+
+    private void countEmptyCellCount(){
+        for(int i = 0; i < playGrid.length; i++){
+            for(int j = 0; j < playGrid[0].length; j++){
+                if(playGrid[i][j] == null) {
+                    emptyCellCount++;
+                }
+            }
+        }
     }
 
     public void setVisible(boolean visible){

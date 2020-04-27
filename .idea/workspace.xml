@@ -4,7 +4,6 @@
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587996358883</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="final pres commit">
+      <created>1587997507407</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587997507407</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +358,8 @@
     <MESSAGE value="demo 1" />
     <MESSAGE value="red background on inputs that break sudoku rules" />
     <MESSAGE value="solution button works while pressed" />
-    <option name="LAST_COMMIT_MESSAGE" value="solution button works while pressed" />
+    <MESSAGE value="final pres commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final pres commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="57" key="#Runner" timestamp="1586882093707">

@@ -4,9 +4,28 @@ import java.util.jar.JarOutputStream;
 import javax.swing.*;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
-import javax.swing.undo.UndoManager;
+import javax.swing.undo.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JRootPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.undo.AbstractUndoableEdit;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
+import javax.swing.undo.UndoableEdit;
 
 public final class GameFrame {
     /**
@@ -17,13 +36,16 @@ public final class GameFrame {
     private final int WINDOW_HEIGHT = 440;
     private static JFrame f;
     private static JLabel l,lh,lb,br;
-    private static JButton hint, undo, clear, newGame, solution;
+    private static JButton hint, undoBtn, clear, newGame, solution;
     private static PlayableGridCreator pgc;
     private static Integer[][] answerGrid;
     private static Integer[][] playGrid;
     private static ActionListener newGameAL;
     private static JTable table;
     private int emptyCellCount = 0;
+    private UndoManager undoManager;
+
+
 
 
     public GameFrame(Difficulty diff, ActionListener newGameAL){
@@ -69,19 +91,12 @@ public final class GameFrame {
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
 
         //undo button
-       undo = new JButton("Undo");
+        undoBtn = new JButton("Undo");
+        Action undoAction = new undoAction();
+        undoBtn.addActionListener(undoAction);
+        undoManager = new UndoManager();
+        SudokuTableModel.getUndoSupport().addUndoableEditListener(new UndoAdaptor());
 
-        UndoableTableModel undoTable = new UndoableTableModel(new SudokuTableModel(playGrid, pgc));
-
-        UndoManager manage = new UndoManager();
-        undoTable.addUndoableEditListener(manage);
-
-        Action undoAction = new UndoAction(manage);
-
-        undo.addActionListener(undoAction);
-
-        table.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), "undoKeyStroke");
-        table.getActionMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK), undoAction);
 
         //clear button
         clear = new JButton("Clear");
@@ -155,7 +170,7 @@ public final class GameFrame {
         listPanel.add(lb);
 
         buttonPanel.add(hint);
-        buttonPanel.add(undo);
+        buttonPanel.add(undoBtn);
         buttonPanel.add(clear);
         buttonPanel.add(newGame);
         listPanel.add(buttonPanel);
@@ -187,4 +202,23 @@ public final class GameFrame {
         return makeIntegerGrid(input);
     }
 
+    private class UndoAdaptor implements UndoableEditListener {
+        public void undoableEditHappened (UndoableEditEvent evt) {
+            UndoableEdit edit = evt.getEdit();
+            undoManager.addEdit(edit);
+            refreshUndo();
+        }
+    }
+
+    private class undoAction extends AbstractAction {
+        public void actionPerformed(ActionEvent evt ) {
+            undoManager.undo();
+            refreshUndo();
+        }
+    }
+
+    private void refreshUndo() {
+        undoBtn.setText(undoManager.getUndoPresentationName());
+        undoBtn.setEnabled(undoManager.canUndo());
+    }
 }

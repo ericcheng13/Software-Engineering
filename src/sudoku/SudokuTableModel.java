@@ -1,14 +1,25 @@
 package sudoku;
 
+import java.awt.*;
 import java.util.ArrayList;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
 import java.util.Random;
 import java.util.Vector;
+import java.io.IOException;
+import javax.swing.undo.*;
+import javax.swing.event.*;
+import java.awt.event.*;
 
 public class SudokuTableModel extends DefaultTableModel {
     private Integer[][] originalTable;
     private Integer[][] answerTable;
     private PlayableGridCreator pgc;
+    private Object oldV;
+    private Object newV;
+    private static UndoableEditSupport undoSupport = new UndoableEditSupport();
+
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
@@ -17,6 +28,9 @@ public class SudokuTableModel extends DefaultTableModel {
         this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
     }
 
+    public static UndoableEditSupport getUndoSupport(){
+        return undoSupport;
+    }
 
     @Override
     public boolean isCellEditable(int row, int column){
@@ -29,15 +43,21 @@ public class SudokuTableModel extends DefaultTableModel {
     }
 
     @Override
-    public void setValueAt(Object value, int row, int col){
-        if((value==null)||( value != null && value.getClass()==Integer.class && ((Integer)value <=9 && (Integer)value >=1 ))) { //checks if value is within 1-9 range or empty
+    public void setValueAt(Object value, int row, int col) {
+        Object oldValue = getValueAt(row, col);
+        Object newValue = value;
+        if ((value == null) || (value != null && value.getClass() == Integer.class && ((Integer) value <= 9 && (Integer) value >= 1))) { //checks if value is within 1-9 range or empty
             Vector<Object> rowVector = dataVector.elementAt(row);
             rowVector.setElementAt(value, col);
         }
 
         fireTableCellUpdated(row, col);
-    }
 
+        if (oldValue != null && !oldValue.equals(newValue)
+                || newValue != null && !newValue.equals(oldValue)) {
+            undoableEditSupport.postEdit(new CommandEdit(row, col));
+        }
+    }
     
     public void clearTable() {
             for (int i = 0; i < this.originalTable.length; i++) {
@@ -88,4 +108,42 @@ public class SudokuTableModel extends DefaultTableModel {
         return (this.getValueAt(row, col) == null) || pgc
             .isLegal(row, col, ((Integer) this.getValueAt(row, col)).intValue(), dataVector);
     }
+
+
+    protected UndoableEditSupport undoableEditSupport = new UndoableEditSupport();
+
+
+    public void addUndoableEditListener(UndoableEditListener undoableEditListener) {
+        undoableEditSupport.addUndoableEditListener(undoableEditListener);
+    }
+
+    public void removeUndoableEditListener(UndoableEditListener undoableEditListener) {
+        undoableEditSupport.removeUndoableEditListener(undoableEditListener);
+    }
+
+    public class CommandEdit
+            extends AbstractUndoableEdit {
+        Object newValue;
+        Object oldValue;
+        int row, col;
+
+        public CommandEdit(int row, int col) {
+            this.newValue = getValueAt(row, col);
+            this.row = row;
+            this.col = col;
+        }
+
+
+        public void undo() throws CannotUndoException {
+            super.undo();
+            oldValue = getValueAt(row, col);
+            setValueAt(newValue, row, col);
+        }
+
+        public boolean canUndo() {
+            return true;
+        }
+    }
+
+
 }

@@ -16,16 +16,16 @@ public class SudokuTableCellRenderer extends DefaultTableCellRenderer {
     }
 
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {
-        super.getTableCellRendererComponent(table,value,isSelected,true,row,col);
+        super.getTableCellRendererComponent(table,value,isSelected,hasFocus,row,col);
         SudokuTableModel tableModel = (SudokuTableModel) table.getModel();
         //emphasizes 3 by 3 grid
         this.setBorder(BorderFactory.createMatteBorder((row) % 3 == 0 ? THICK : THIN, (col) % 3 == 0 ? THICK : THIN, (row+1) % 3 == 0 ? THICK : THIN, (col+1) % 3 == 0 ? THICK : THIN, Color.black));
         this.setHorizontalAlignment(CENTER);
 
-        if (!tableModel.isCellEditable(row,col) && !tableModel.isValueValid(row, col)){
+        if (!table.isCellEditable(row,col) && !tableModel.isValueValid(row, col)){
             this.setBackground(greyRed);
         }
-        else if (!tableModel.isCellEditable(row,col)) {
+        else if (!table.isCellEditable(row,col)) {
             this.setBackground(lightGrey);
         }
         else if(table.isCellSelected(row, col)){

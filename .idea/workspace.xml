@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="138dd084-4534-4896-a49c-576337baf00f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/test/PlayableGridCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/PlayableGridCreatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586724627974</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="solution button works while pressed">
+      <created>1587996358883</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587996358883</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +351,8 @@
     <MESSAGE value="clear button" />
     <MESSAGE value="demo 1" />
     <MESSAGE value="red background on inputs that break sudoku rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="red background on inputs that break sudoku rules" />
+    <MESSAGE value="solution button works while pressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="solution button works while pressed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="57" key="#Runner" timestamp="1586882093707">

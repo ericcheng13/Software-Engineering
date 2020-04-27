@@ -1,16 +1,12 @@
 package sudoku;
 
-import java.awt.*;
-import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.event.UndoableEditListener;
 import javax.swing.table.DefaultTableModel;
-import java.util.List;
+import javax.swing.undo.AbstractUndoableEdit;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoableEditSupport;
 import java.util.Random;
 import java.util.Vector;
-import java.io.IOException;
-import javax.swing.undo.*;
-import javax.swing.event.*;
-import java.awt.event.*;
 
 public class SudokuTableModel extends DefaultTableModel {
     private Integer[][] originalTable;
@@ -19,14 +15,12 @@ public class SudokuTableModel extends DefaultTableModel {
     private Object oldV;
     private Object newV;
     private static UndoableEditSupport undoSupport = new UndoableEditSupport();
-    private Integer[][] prevVector;
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
         this.pgc = pgc;
         this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
-        prevVector = playGrid;
     }
 
     public static UndoableEditSupport getUndoSupport(){
@@ -100,7 +94,6 @@ public class SudokuTableModel extends DefaultTableModel {
     public void fillAll() {
         for (int i = 0; i < this.originalTable.length; i++) {
             for (int j = 0; j < this.originalTable[0].length; j++) {
-                prevVector[i][j] = (Integer)this.getValueAt(i,j);
                 this.setValueAt(this.answerTable[i][j],i,j);
             }
         }

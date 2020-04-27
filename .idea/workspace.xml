@@ -5,10 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/PlayableGridCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableCellRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/SudokuTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/UndoAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudoku/UndoableTableModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/test/PlayableGridCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/PlayableGridCreatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku/test/SudokuTableCellRendererTest.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,9 +63,6 @@
       <recent name="test" />
       <recent name="sudoku" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="sudoku" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -70,6 +70,18 @@
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku" />
       <recent name="C:\Users\Joanna\Documents\Code\Sudoku\src" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Runner">
     <configuration name="CreateGrid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -113,7 +125,7 @@
     </configuration>
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sudoku.Runner" />
-      <module name="Sudoku" />
+      <module name="Software-Engineering" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sudoku.test.*" />
@@ -186,7 +198,7 @@
       <updated>1582184935218</updated>
       <workItem from="1586885248776" duration="3286000" />
       <workItem from="1587330453729" duration="3359000" />
-      <workItem from="1587925938971" duration="13070000" />
+      <workItem from="1587925938971" duration="7208000" />
     </task>
     <task id="LOCAL-00001" summary="too complex, going to prototype differently">
       <created>1582191492914</created>
@@ -340,52 +352,39 @@
     <option name="LAST_COMMIT_MESSAGE" value="red background on inputs that break sudoku rules" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="325" y="57" key="#Runner" timestamp="1587993215192">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state x="325" y="57" key="#Runner" timestamp="1586882093707">
+      <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="325" y="57" key="#Runner/0.23.1280.728@0.23.1280.728" timestamp="1586882093707" />
     <state x="325" y="57" key="#Runner/0.23.1280.730@0.23.1280.730" timestamp="1586881353686" />
-    <state x="325" y="57" key="#Runner/0.23.1280.737@0.23.1280.737" timestamp="1587993215192" />
-    <state x="473" y="297" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587940441951">
-      <screen x="0" y="23" width="1280" height="737" />
-    </state>
-    <state x="473" y="297" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1280.737@0.23.1280.737" timestamp="1587940441951" />
-    <state x="378" y="144" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587987808245">
-      <screen x="0" y="23" width="1280" height="737" />
-    </state>
-    <state x="378" y="144" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.737@0.23.1280.737" timestamp="1587987808245" />
     <state x="313" y="23" key="CommitChangelistDialog2" timestamp="1586882085720">
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="313" y="23" key="CommitChangelistDialog2/0.23.1280.728@0.23.1280.728" timestamp="1586882085720" />
-    <state width="592" height="169" key="GridCell.Tab.0.bottom" timestamp="1587993217225">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1049" height="170" key="GridCell.Tab.0.bottom" timestamp="1586882096157">
+      <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state width="1049" height="170" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1586882096157" />
     <state width="1049" height="170" key="GridCell.Tab.0.bottom/0.23.1280.729@0.23.1280.729" timestamp="1586881955036" />
     <state width="1049" height="170" key="GridCell.Tab.0.bottom/0.23.1280.730@0.23.1280.730" timestamp="1586881355542" />
-    <state width="592" height="169" key="GridCell.Tab.0.bottom/0.23.1280.737@0.23.1280.737" timestamp="1587993217225" />
-    <state width="592" height="169" key="GridCell.Tab.0.center" timestamp="1587993217224">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1049" height="170" key="GridCell.Tab.0.center" timestamp="1586882096155">
+      <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state width="1049" height="170" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1586882096155" />
     <state width="1049" height="170" key="GridCell.Tab.0.center/0.23.1280.729@0.23.1280.729" timestamp="1586881955026" />
     <state width="1049" height="170" key="GridCell.Tab.0.center/0.23.1280.730@0.23.1280.730" timestamp="1586881355541" />
-    <state width="592" height="169" key="GridCell.Tab.0.center/0.23.1280.737@0.23.1280.737" timestamp="1587993217224" />
-    <state width="592" height="169" key="GridCell.Tab.0.left" timestamp="1587993217223">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1049" height="170" key="GridCell.Tab.0.left" timestamp="1586882096155">
+      <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state width="1049" height="170" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1586882096155" />
     <state width="1049" height="170" key="GridCell.Tab.0.left/0.23.1280.729@0.23.1280.729" timestamp="1586881955022" />
     <state width="1049" height="170" key="GridCell.Tab.0.left/0.23.1280.730@0.23.1280.730" timestamp="1586881355540" />
-    <state width="592" height="169" key="GridCell.Tab.0.left/0.23.1280.737@0.23.1280.737" timestamp="1587993217223" />
-    <state width="592" height="169" key="GridCell.Tab.0.right" timestamp="1587993217224">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1049" height="170" key="GridCell.Tab.0.right" timestamp="1586882096157">
+      <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state width="1049" height="170" key="GridCell.Tab.0.right/0.23.1280.728@0.23.1280.728" timestamp="1586882096157" />
     <state width="1049" height="170" key="GridCell.Tab.0.right/0.23.1280.729@0.23.1280.729" timestamp="1586881955029" />
     <state width="1049" height="170" key="GridCell.Tab.0.right/0.23.1280.730@0.23.1280.730" timestamp="1586881355542" />
-    <state width="592" height="169" key="GridCell.Tab.0.right/0.23.1280.737@0.23.1280.737" timestamp="1587993217224" />
     <state x="356" y="113" key="RollbackChangesDialog" timestamp="1586879916673">
       <screen x="0" y="23" width="1280" height="731" />
     </state>
@@ -400,13 +399,9 @@
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="435" y="194" key="git4idea.merge.GitMergeDialog/0.23.1280.728@0.23.1280.728" timestamp="1586882058685" />
-    <state x="344" y="174" key="run.anything.popup" timestamp="1587987050103">
-      <screen x="0" y="23" width="1280" height="737" />
-    </state>
-    <state x="344" y="174" key="run.anything.popup/0.23.1280.737@0.23.1280.737" timestamp="1587987050103" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest_makeIntegerGrid.ic" NAME="GameFrameTest.makeIntegerGrid Coverage Results" MODIFIED="1585311493239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableCellRendererTest.ic" NAME="SudokuTableCellRendererTest Coverage Results" MODIFIED="1585328245454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest.ic" NAME="GameFrameTest Coverage Results" MODIFIED="1585328217015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -415,7 +410,11 @@
     <SUITE FILE_PATH="coverage/Sudoku$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1585328562957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$PlayableGridCreatorTest.ic" NAME="PlayableGridCreatorTest Coverage Results" MODIFIED="1585328138695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sudoku$StartFrameTest.ic" NAME="StartFrameTest Coverage Results" MODIFIED="1585328237630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.ic" NAME="DisplayTest Coverage Results" MODIFIED="1585328207739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
       <FILTER>sudoku.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$RunnerTest.ic" NAME="RunnerTest Coverage Results" MODIFIED="1585328226967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -424,14 +423,8 @@
     <SUITE FILE_PATH="coverage/Software_Engineering$CreateGridTest_newGridTest.ic" NAME="CreateGridTest.newGridTest Coverage Results" MODIFIED="1586891942150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableModelTest.ic" NAME="SudokuTableModelTest Coverage Results" MODIFIED="1585328252980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$StartFrameTest.ic" NAME="StartFrameTest Coverage Results" MODIFIED="1585328237630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableCellRendererTest.ic" NAME="SudokuTableCellRendererTest Coverage Results" MODIFIED="1585328245454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sudoku.test.*</FILTER>
+    <SUITE FILE_PATH="coverage/Sudoku$PlayableGridCreatorTest.ic" NAME="PlayableGridCreatorTest Coverage Results" MODIFIED="1585328138695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.exec" NAME="DisplayTest Coverage Results" MODIFIED="1585277426557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
@@ -440,9 +433,11 @@
     <SUITE FILE_PATH="coverage/Software_Engineering$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1586879932430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sudoku$DisplayTest.ic" NAME="DisplayTest Coverage Results" MODIFIED="1585328207739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sudoku$GameFrameTest_makeIntegerGrid.ic" NAME="GameFrameTest.makeIntegerGrid Coverage Results" MODIFIED="1585311493239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sudoku.test.*</FILTER>
-      <FILTER>sudoku.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sudoku$SudokuTableModelTest.ic" NAME="SudokuTableModelTest Coverage Results" MODIFIED="1585328252980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sudoku.test.*</FILTER>
     </SUITE>
   </component>
 </project>

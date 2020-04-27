@@ -19,13 +19,14 @@ public class SudokuTableModel extends DefaultTableModel {
     private Object oldV;
     private Object newV;
     private static UndoableEditSupport undoSupport = new UndoableEditSupport();
-
+    private Integer[][] prevVector;
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
         this.pgc = pgc;
         this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
+        prevVector = playGrid;
     }
 
     public static UndoableEditSupport getUndoSupport(){
@@ -77,6 +78,7 @@ public class SudokuTableModel extends DefaultTableModel {
                 Integer val = (Integer)this.getValueAt(i,j);
                 if (val != null && !pgc.isCorrect(i,j,val)){
                     this.setValueAt(this.answerTable[i][j], i, j);
+                    this.originalTable[i][j] = this.answerTable[i][j];
                     corrected = true;
                     break CHANGE_VAL_LOOP;
                 }
@@ -89,6 +91,7 @@ public class SudokuTableModel extends DefaultTableModel {
             int col = Math.floorDiv(rand,9);
             if(isCellEditable(row,col) && this.getValueAt(row,col)==null){
                 this.setValueAt(this.answerTable[row][col],row,col);
+                this.originalTable[row][col] = this.answerTable[row][col];
                 corrected = true;
             }
         }
@@ -97,11 +100,10 @@ public class SudokuTableModel extends DefaultTableModel {
     public void fillAll() {
         for (int i = 0; i < this.originalTable.length; i++) {
             for (int j = 0; j < this.originalTable[0].length; j++) {
+                prevVector[i][j] = (Integer)this.getValueAt(i,j);
                 this.setValueAt(this.answerTable[i][j],i,j);
             }
         }
-
-
     }
 
     public boolean isValueValid(int row, int col) {

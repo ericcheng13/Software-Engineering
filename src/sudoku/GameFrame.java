@@ -2,8 +2,7 @@ package sudoku;
 
 import java.util.jar.JarOutputStream;
 import javax.swing.*;
-import javax.swing.event.UndoableEditEvent;
-import javax.swing.event.UndoableEditListener;
+import javax.swing.event.*;
 import javax.swing.undo.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -33,7 +32,7 @@ public final class GameFrame {
      * includes sudoku grid, buttons for Hint, Verify, Undo, Clear, and New Game
      */
     private final int WINDOW_WIDTH = 300;
-    private final int WINDOW_HEIGHT = 440;
+    private final int WINDOW_HEIGHT = 450;
     private static JFrame f;
     private static JLabel l,lh,lb,br;
     private static JButton hint, undoBtn, clear, newGame, solution;
@@ -110,7 +109,7 @@ public final class GameFrame {
         //hint button
 
       for(int i = 0; i < playGrid.length; i++){
-        for(int j = 0; j < playGrid.length; j++){
+        for(int j = 0; j < playGrid[0].length; j++){
          if(playGrid[i][j] == null) {
            emptyCellCount++;
          }
@@ -123,6 +122,7 @@ public final class GameFrame {
               if(emptyCellCount > 0) {
                 ((SudokuTableModel) table.getModel()).fillValue();
                 emptyCellCount= emptyCellCount - 2;
+                lh.setText("You have " + emptyCellCount/2 + " hints.");
               }
               else{
                 JOptionPane.showMessageDialog(null, "You ran out of Hints" );
@@ -137,16 +137,25 @@ public final class GameFrame {
       lh.setFont(font);
       hint.addActionListener(hintAL);
 
-        //solutions button
-        solution = new JButton("Solution");
-        solution.setAlignmentX(Component.CENTER_ALIGNMENT);
-      ActionListener solutionAL = new ActionListener(){
-        public void actionPerformed(ActionEvent e) {
-            ((SudokuTableModel) table.getModel()).fillAll();
-           }
-        };
-        solution.addActionListener(solutionAL);
+      //solutions button
+      solution = new JButton("Solution");
+      solution.setAlignmentX(Component.CENTER_ALIGNMENT);
+      ButtonModel solModel = solution.getModel();
+      solModel.addChangeListener(new ChangeListener() {
+          private boolean needChange = false;
+          @Override
+          public void stateChanged(ChangeEvent e) {
+              if(solModel.isPressed()){
+                  ((SudokuTableModel) table.getModel()).fillAll();
+                  needChange = true;
+              }
+              else if (!solModel.isPressed() && needChange){
+                  ((SudokuTableModel)table.getModel()).clearTable();
+                  needChange = false;
+              }
 
+          }
+      });
         //title label
         l = new JLabel("Sudoku Unlimited");
         l.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -175,6 +184,7 @@ public final class GameFrame {
         buttonPanel.add(newGame);
         listPanel.add(buttonPanel);
         listPanel.add(solution);
+
         //create window
         f.add(listPanel);
         f.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);

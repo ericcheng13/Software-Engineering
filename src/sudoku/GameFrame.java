@@ -121,40 +121,17 @@ public final class GameFrame {
         finalPanel.add(solution);
     }
 
-    private void createTable(){
+    private void createTable() {
         table = new JTable();
-        table.setModel(new SudokuTableModel(playGrid,pgc));
+        table.setModel(new SudokuTableModel(playGrid, pgc));
         table.setDefaultRenderer(Integer.class, new SudokuTableCellRenderer());
         table.setCellSelectionEnabled(true);
         table.setAlignmentX(Component.CENTER_ALIGNMENT);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.setRowHeight(30);
         table.doLayout();
-        table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
-
-        //undo button
-        undoBtn = new JButton("Undo");
-        Action undoAction = new undoAction();
-        undoBtn.addActionListener(undoAction);
-
-        //clear button
-        clear = new JButton("Clear");
-        ActionListener clearAL = new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                ((SudokuTableModel)table.getModel()).clearTable();
-            }
-        };
-        clear.addActionListener(clearAL);
-
-        //hint button
-
-      for(int i = 0; i < playGrid.length; i++){
-        for(int j = 0; j < playGrid[0].length; j++){
-         if(playGrid[i][j] == null) {
-           emptyCellCount++;
-         }
-         }
-      }
+        table.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
+    }
 
     private void createHintButton(){
         hint = new JButton("Hint");
@@ -180,9 +157,6 @@ public final class GameFrame {
         undoBtn = new JButton("Undo");
         Action undoAction = new undoAction();
         undoBtn.addActionListener(undoAction);
-        undoManager = new UndoManager();
-        SudokuTableModel.getUndoSupport().addUndoableEditListener(new UndoAdaptor());
-
     }
 
     private void createClearButton(){

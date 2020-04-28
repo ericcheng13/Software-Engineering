@@ -320,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587997507407</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactored game frame">
+      <created>1588001187274</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588001187275</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +366,8 @@
     <MESSAGE value="red background on inputs that break sudoku rules" />
     <MESSAGE value="solution button works while pressed" />
     <MESSAGE value="final pres commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="final pres commit" />
+    <MESSAGE value="refactored game frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored game frame" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="57" key="#Runner" timestamp="1586882093707">

@@ -211,9 +211,9 @@ public class PlayableGridCreator {
      CreateGrid cg = new CreateGrid();
      int[][] grid = cg.newGrid();
      PlayableGridCreator pgc = new PlayableGridCreator();
-     System.out.println(pgc.printMat(pgc.getMat()));
+    System.out.println(pgc.printMat(pgc.getMat()));
      System.out.println(pgc.printMat(pgc.medium()));
-     System.out.println(pgc.printMat(pgc.getMat()));
+    System.out.println(pgc.printMat(pgc.getMat()));
      System.out.println(pgc.numSolutions(0,0,grid,0));
      }
 }

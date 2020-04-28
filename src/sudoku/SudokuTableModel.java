@@ -7,20 +7,39 @@ import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoableEditSupport;
 import java.util.Random;
 import java.util.Vector;
+import java.io.IOException;
+import javax.swing.undo.*;
+import javax.swing.event.*;
+import java.awt.event.*;
+import java.util.LinkedList;
 
 public class SudokuTableModel extends DefaultTableModel {
     private Integer[][] originalTable;
     private Integer[][] answerTable;
     private PlayableGridCreator pgc;
-    private Object oldV;
-    private Object newV;
     private static UndoableEditSupport undoSupport = new UndoableEditSupport();
+
+    private Integer[][] undoMatrix = new Integer[9][9];
+    private Integer[][] oldMatrix = new Integer[9][9];
+    private LinkedList<Integer> rowList = new LinkedList();
+    private LinkedList<Integer> columnList = new LinkedList();
+
+    public void fillMatrix(Integer[][] mat){
+        for (int i = 0; i <9; i++ ){
+            for (int j = 0; i < 9; i++ ) {
+                mat[i][j] = 0;
+            }
+        }
+    }
 
     public SudokuTableModel(Integer[][] playGrid, PlayableGridCreator pgc){
         super(playGrid, playGrid[0]);
         this.originalTable = playGrid;
         this.pgc = pgc;
         this.answerTable = GameFrame.makeIntegerGrid(pgc.getMat());
+        this.fillMatrix(undoMatrix);
+        this.fillMatrix(oldMatrix);
+
     }
 
     public static UndoableEditSupport getUndoSupport(){
@@ -39,19 +58,17 @@ public class SudokuTableModel extends DefaultTableModel {
 
     @Override
     public void setValueAt(Object value, int row, int col) {
-        Object oldValue = getValueAt(row, col);
-        Object newValue = value;
         if ((value == null) || (value != null && value.getClass() == Integer.class && ((Integer) value <= 9 && (Integer) value >= 1))) { //checks if value is within 1-9 range or empty
             Vector<Object> rowVector = dataVector.elementAt(row);
             rowVector.setElementAt(value, col);
-        }
+                oldMatrix[row][col] = undoMatrix[row][col];
+                undoMatrix[row][col] = (Integer)value;
+            }
 
         fireTableCellUpdated(row, col);
+        rowList.addFirst(row);
+        columnList.addFirst(col);
 
-        if (oldValue != null && !oldValue.equals(newValue)
-                || newValue != null && !newValue.equals(oldValue)) {
-            undoableEditSupport.postEdit(new CommandEdit(row, col));
-        }
     }
     
     public void clearTable() {
@@ -98,46 +115,15 @@ public class SudokuTableModel extends DefaultTableModel {
             }
         }
     }
+    public void undoValue() {
+        setValueAt(oldMatrix[rowList.peek()][columnList.peek()], rowList.remove(), columnList.remove());
+        rowList.remove();
+        columnList.remove();
+    }
 
     public boolean isValueValid(int row, int col) {
         return (this.getValueAt(row, col) == null) || pgc
             .isLegal(row, col, ((Integer) this.getValueAt(row, col)).intValue(), dataVector);
-    }
-
-
-    protected UndoableEditSupport undoableEditSupport = new UndoableEditSupport();
-
-
-    public void addUndoableEditListener(UndoableEditListener undoableEditListener) {
-        undoableEditSupport.addUndoableEditListener(undoableEditListener);
-    }
-
-    public void removeUndoableEditListener(UndoableEditListener undoableEditListener) {
-        undoableEditSupport.removeUndoableEditListener(undoableEditListener);
-    }
-
-    public class CommandEdit
-            extends AbstractUndoableEdit {
-        Object newValue;
-        Object oldValue;
-        int row, col;
-
-        public CommandEdit(int row, int col) {
-            this.newValue = getValueAt(row, col);
-            this.row = row;
-            this.col = col;
-        }
-
-
-        public void undo() throws CannotUndoException {
-            super.undo();
-            oldValue = getValueAt(row, col);
-            setValueAt(newValue, row, col);
-        }
-
-        public boolean canUndo() {
-            return true;
-        }
     }
 
 

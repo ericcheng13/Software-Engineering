@@ -1,6 +1,16 @@
 package sudoku;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JRootPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.UndoableEditEvent;
@@ -30,8 +40,6 @@ public final class GameFrame {
     private static JTable table;
     private static JPanel finalPanel;
     private int emptyCellCount = 0;
-    private UndoManager undoManager;
-
 
 
 
@@ -123,7 +131,30 @@ public final class GameFrame {
         table.setRowHeight(30);
         table.doLayout();
         table.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 25));
-    }
+
+        //undo button
+        undoBtn = new JButton("Undo");
+        Action undoAction = new undoAction();
+        undoBtn.addActionListener(undoAction);
+
+        //clear button
+        clear = new JButton("Clear");
+        ActionListener clearAL = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                ((SudokuTableModel)table.getModel()).clearTable();
+            }
+        };
+        clear.addActionListener(clearAL);
+
+        //hint button
+
+      for(int i = 0; i < playGrid.length; i++){
+        for(int j = 0; j < playGrid[0].length; j++){
+         if(playGrid[i][j] == null) {
+           emptyCellCount++;
+         }
+         }
+      }
 
     private void createHintButton(){
         hint = new JButton("Hint");
@@ -224,23 +255,10 @@ public final class GameFrame {
         return makeIntegerGrid(input);
     }
 
-    private class UndoAdaptor implements UndoableEditListener {
-        public void undoableEditHappened (UndoableEditEvent evt) {
-            UndoableEdit edit = evt.getEdit();
-            undoManager.addEdit(edit);
-            refreshUndo();
-        }
-    }
 
     private class undoAction extends AbstractAction {
         public void actionPerformed(ActionEvent evt ) {
-            undoManager.undo();
-            refreshUndo();
+            ((SudokuTableModel)table.getModel()).undoValue();
         }
-    }
-
-    private void refreshUndo() {
-        undoBtn.setText(undoManager.getUndoPresentationName());
-        undoBtn.setEnabled(undoManager.canUndo());
     }
 }
